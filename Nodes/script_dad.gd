@@ -7,7 +7,7 @@ enum DAD_STATES{
 	dead
 }
 
-@export var jokes : Array[class_joke] = []
+@export var jokes : Array[class_joke]
 
 var current_joke = -1
 @onready var my_timer = $timer
@@ -16,7 +16,6 @@ var current_joke = -1
 @onready var state = DAD_STATES.off
 
 func _ready():
-	print("start")
 	my_timer.start()
 
 func _process(_delta):
@@ -27,19 +26,37 @@ func _on_timer_timeout():
 	match state:
 		DAD_STATES.off:
 			#start a joke
-			current_joke = jokes.pick_random();
-			
-			my_textbox.display_text(jokes.pick_random())
+
+			print("starting to pick a joke")
+			current_joke = jokes.pick_random()
+			current_joke.reset_progress()
+			print("trying to load joke " + current_joke.get_line().text)
+			my_textbox.display_text(current_joke.get_line().text)
 			state = DAD_STATES.joke
 			print("joke started")
+			
 		DAD_STATES.joke:
 			#progress joke line
 			print("progress joke")
+			
+			if(current_joke.is_done()):
+				#end joke
+				if(current_joke.is_activated()):
+					state = DAD_STATES.off
+					#also start the timer
+				else:
+					state = DAD_STATES.dead
+					print("died")
+			else:
+				#progress lines
+				current_joke.next_line()
+				print(current_joke.get_line().text)
+				my_textbox.display_text(current_joke.get_line().text)
+			
 		DAD_STATES.dead:
 			#do nothing
 			print("dead dad stays dead")
 	
 	var num = rnd.randf_range(2.0, 6.0)
-	print("stopped and set to " + str(num))
-	my_timer.wait_time = num
-	my_timer.start()
+	#print("stopped and set to " + str(num))
+	my_timer.start(num)
