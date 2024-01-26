@@ -11,10 +11,13 @@ config_version=5
 [application]
 
 config/name="Dead-jokes"
-
 run/main_scene="res://Scenes/main_scene.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+globals="*res://Scripts/globals.gd"
 
 [display]
 
@@ -23,11 +26,6 @@ window/size/viewport_height=270
 window/size/window_width_override=1440
 window/size/window_height_override=810
 window/stretch/mode="viewport"
-
-[autoload]
-
-gloabls="*res://Scripts/globals.gd"
-
 
 [dotnet]
 
