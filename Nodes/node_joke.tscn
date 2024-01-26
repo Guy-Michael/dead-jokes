@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp6kum2ao2q1"]
+
+[ext_resource type="Script" path="res://Nodes/script_joke.gd" id="1_3t40v"]
+
+[node name="node_joke" type="Node"]
+script = ExtResource("1_3t40v")
