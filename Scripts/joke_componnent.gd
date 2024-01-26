@@ -5,6 +5,7 @@ var is_inside_dropable = false	#Is the object in a dropabale area
 var body_ref	#Refrence to the dropable area when the object enters it
 var offset: Vector2		#For maintaing the position of the object relative to the mouse pos
 var inital_pos: Vector2		#Keeps the inital position of the object
+@export var component_type: gloabls.Joke_Component 
 
 func _process(_delta):
 	if draggable:
@@ -43,4 +44,7 @@ func _on_area_2d_body_entered(body:StaticBody2D):
 func _on_area_2d_body_exited(body):
 	if body.is_in_group('dropable'):
 		is_inside_dropable = false
-		
+
+##Retruns the type of the joke component
+func return_type():
+	return component_type
