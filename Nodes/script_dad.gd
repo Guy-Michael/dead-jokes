@@ -26,6 +26,7 @@ func _on_timer_timeout():
 	match state:
 		DAD_STATES.off:
 			#start a joke
+
 			print("starting to pick a joke")
 			current_joke = jokes.pick_random()
 			current_joke.reset_progress()

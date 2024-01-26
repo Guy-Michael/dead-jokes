@@ -20,7 +20,9 @@ func _process(_delta):
 			globals.is_dragging = false
 			var tween = get_tree().create_tween()
 			if is_inside_dropable:
-				tween.tween_property(self, "position", body_ref.position, 0.2).set_ease(Tween.EASE_OUT)		
+				var t = Tween.new()
+				t.tween_property(self, "position", body_ref.position, 0.2).set_ease(Tween.EASE_OUT)		
+				t.finished.connect(destroy_me)
 			else:
 				tween.tween_property(self, "position", inital_pos, 0.2).set_ease(Tween.EASE_OUT)
 func _on_area_2d_mouse_entered():
@@ -48,3 +50,7 @@ func _on_area_2d_body_exited(body):
 ##Retruns the type of the joke component
 func return_type():
 	return component_type
+
+##Destroy the object when it is dropped in dropable area
+func destroy_me():
+	queue_free()

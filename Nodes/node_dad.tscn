@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=7 format=3 uid="uid://cc6nt4n6ymqrq"]
 
 [ext_resource type="Texture2D" uid="uid://cy153elteuiog" path="res://Sprites/dad left talk.png" id="1_ucgjk"]
@@ -5,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c70ghln7n3qxg" path="res://itai dev/text_box.tscn" id="2_orbi0"]
 [ext_resource type="Resource" uid="uid://bxtkk5518wdtp" path="res://jokes/joke_chamor.tres" id="4_8raph"]
 [ext_resource type="Resource" uid="uid://ctifsar3w38fx" path="res://jokes/joke_shnizel.tres" id="4_peivc"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12uel"]
 size = Vector2(146, 74)
