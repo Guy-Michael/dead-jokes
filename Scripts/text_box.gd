@@ -15,9 +15,16 @@ var punc_time = 0.2*speed_mult
 
 signal finished_displaying()
 
+func _ready():
+	visible = false
+
 func display_text(text_to_display: String):
+	
+	
 	print("  - displaying: " + text_to_display)
 	text = text_to_display
+	
+	visible = text != ""
 	
 	#await resized
 	#custom_minimum_size.x = min(size.x, MAX_WIDTH)

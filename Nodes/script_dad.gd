@@ -56,7 +56,7 @@ func switch_state(new_state : DAD_STATES):
 	match new_state:
 		DAD_STATES.off:
 			print("returned to neutral")
-			my_textbox.display_text("")
+			#my_textbox.display_text("")
 			var num = rnd.randf_range(2.0, 6.0)
 			print("cooldown set to " + str(num))
 			my_timer.start(num)
@@ -65,7 +65,7 @@ func switch_state(new_state : DAD_STATES):
 		DAD_STATES.joke:
 			#start a joke
 			print("joke started")
-
+	
 			#pick a joke
 			current_joke = jokes.pick_random()
 			current_joke.reset_progress()
@@ -86,4 +86,6 @@ func switch_state(new_state : DAD_STATES):
 			my_textbox.display_text("")
 			my_sprite.set_frame(2)
 			#change sprite
-			
+
+func send_action(_action: globals.Joke_Component):
+	current_joke.send_action(_action)
