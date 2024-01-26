@@ -14,6 +14,10 @@ config/name="Dead-jokes"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+gloabls="*res://Scenes/globals.gd"
+
 [dotnet]
 
 project/assembly_name="Dead-jokes"
