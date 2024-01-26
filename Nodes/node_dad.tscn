@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cc6nt4n6ymqrq"]
+
+[ext_resource type="Texture2D" uid="uid://cy153elteuiog" path="res://Sprites/dad left talk.png" id="1_ucgjk"]
+[ext_resource type="Script" path="res://Nodes/script_dad.gd" id="2_l4x7i"]
+[ext_resource type="PackedScene" uid="uid://c70ghln7n3qxg" path="res://itai dev/text_box.tscn" id="2_orbi0"]
+[ext_resource type="Resource" uid="uid://bo12oh6hoj5sy" path="res://Resources/resource_joke.tres" id="3_uhxea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12uel"]
+size = Vector2(146, 74)
+
+[node name="NodeDad" type="Sprite2D"]
+position = Vector2(240, 136)
+texture = ExtResource("1_ucgjk")
+script = ExtResource("2_l4x7i")
+jokes = Array[Resource("res://Nodes/script_joke.gd")]([ExtResource("3_uhxea")])
+
+[node name="TextBox" parent="." instance=ExtResource("2_orbi0")]
+offset_left = -224.0
+offset_top = -120.0
+offset_right = -88.0
+offset_bottom = -23.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-144, -72)
+shape = SubResource("RectangleShape2D_12uel")
+
+[node name="timer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

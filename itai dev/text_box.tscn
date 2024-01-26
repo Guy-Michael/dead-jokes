@@ -12,6 +12,7 @@ cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/24/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/24/1 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/12/0 = Vector2(0, 0)
 cache/0/24/0/ascent = 0.0
 cache/0/24/0/descent = 0.0
 cache/0/24/0/underline_position = 0.0
@@ -25,10 +26,20 @@ cache/0/24/0/glyphs/0/texture_idx = -1
 cache/0/24/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/24/0/kerning_overrides/24/0 = Vector2(0, 0)
 cache/0/24/0/kerning_overrides/24/1 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/12/0 = Vector2(0, 0)
 cache/0/24/1/glyphs/0/offset = Vector2(0, 0)
 cache/0/24/1/glyphs/0/size = Vector2(0, 0)
 cache/0/24/1/glyphs/0/uv_rect = Rect2(0, 0, 0, 0)
 cache/0/24/1/glyphs/0/texture_idx = -1
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/12/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/12/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/12/0/kerning_overrides/24/1 = Vector2(0, 0)
+cache/0/12/0/kerning_overrides/12/0 = Vector2(0, 0)
 
 [node name="TextBox" type="MarginContainer"]
 script = ExtResource("1_vkut1")
@@ -56,10 +67,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.278431)
 theme_override_fonts/font = SubResource("FontFile_nhoka")
-theme_override_font_sizes/font_size = 24
-text = "וןאז הוא אמר כזה
-יואו איזה קאע
-בום חמור"
+theme_override_font_sizes/font_size = 12
 vertical_alignment = 1
 
 [node name="letterDisplayTimer" type="Timer" parent="."]
