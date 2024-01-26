@@ -20,8 +20,10 @@ func _ready():
 	my_timer.start()
 
 func _process(_delta):
-	pass
-	
+	if Input.is_action_pressed("clap"):
+		send_action(globals.Joke_Component.CLAP)
+	if Input.is_action_pressed("laugh"):
+		send_action(globals.Joke_Component.LAUGH)
 func _on_timer_timeout():
 	
 	match state:
@@ -56,11 +58,12 @@ func switch_state(new_state : DAD_STATES):
 	match new_state:
 		DAD_STATES.off:
 			print("returned to neutral")
-			#my_textbox.display_text("")
+			my_textbox.display_text("")
 			var num = rnd.randf_range(2.0, 6.0)
 			print("cooldown set to " + str(num))
 			my_timer.start(num)
 			my_sprite.set_frame(0)
+			current_joke = -1
 		
 		DAD_STATES.joke:
 			#start a joke
@@ -88,4 +91,19 @@ func switch_state(new_state : DAD_STATES):
 			#change sprite
 
 func send_action(_action: globals.Joke_Component):
-	current_joke.send_action(_action)
+	var _text = ""
+	match _action:
+		globals.Joke_Component.CLAP:
+			_text = "clap"
+		globals.Joke_Component.LAUGH:
+			_text = "laugh"
+	print(_text)
+	
+	if(state == DAD_STATES.joke):
+		current_joke.send_action(_action)
+		var _right = current_joke.is_activated()
+		
+		if _right:
+			my_textbox.set_texture(1)
+		else:
+			my_textbox.set_texture(2)

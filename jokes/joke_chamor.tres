@@ -6,12 +6,14 @@
 [sub_resource type="Resource" id="Resource_ty7ku"]
 script = ExtResource("1_i3ud1")
 text = "chamor went and then"
-time = 6.0
+time = 4.0
+accepted_indexes = Array[int]([])
 
 [sub_resource type="Resource" id="Resource_p3roe"]
 script = ExtResource("1_i3ud1")
 text = "horse haha"
 time = 6.0
+accepted_indexes = Array[int]([1])
 
 [resource]
 script = ExtResource("2_q24x6")

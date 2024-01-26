@@ -2,6 +2,7 @@ extends MarginContainer
 
 @onready var label = $MarginContainer/Label
 @onready var timer = $timer
+@onready var ninePatch = $ninePatch
 
 const MAX_WIDTH = 256
 
@@ -12,14 +13,18 @@ var speed_mult = 3
 var letter_time = 0.03*speed_mult
 var space_time = 0.06*speed_mult
 var punc_time = 0.2*speed_mult
-
+@export var sprites_arr : Array[Texture]
 signal finished_displaying()
 
 func _ready():
 	visible = false
 
+func set_texture(index: int):
+	ninePatch.texture = sprites_arr[index]
+
 func display_text(text_to_display: String):
 	
+	set_texture(0)
 	
 	print("  - displaying: " + text_to_display)
 	text = text_to_display
