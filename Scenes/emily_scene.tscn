@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm0roerbvvnmr"]
+[gd_scene load_steps=4 format=3 uid="uid://xjvq3x82cr55"]
 
 [ext_resource type="Script" path="res://Scripts/joke_componnent.gd" id="1_cai6b"]
 [ext_resource type="Texture2D" uid="uid://bkbdeieiryswt" path="res://icon.svg" id="2_6sokm"]
