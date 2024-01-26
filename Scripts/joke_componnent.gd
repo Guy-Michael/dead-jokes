@@ -20,12 +20,13 @@ func _process(_delta):
 			gloabls.is_dragging = false
 			var tween = get_tree().create_tween()
 			if is_inside_dropable:
-				tween.tween_property(self, "position", body_ref.position, 0.2).set_ease(Tween.EASE_OUT)		
+				var t = Tween.new()
+				t.tween_property(self, "position", body_ref.position, 0.2).set_ease(Tween.EASE_OUT)		
+				t.finished.connect(destroy_me)
 			else:
 				tween.tween_property(self, "position", inital_pos, 0.2).set_ease(Tween.EASE_OUT)
 func _on_area_2d_mouse_entered():
 	#Making sure we are dragging only one object
-	print_debug("mouse entered")
 	if not gloabls.is_dragging:
 		draggable = true
 		scale = Vector2(1.05, 1.05)		#Scaling the sprite (more for the visual effect)
@@ -48,3 +49,7 @@ func _on_area_2d_body_exited(body):
 ##Retruns the type of the joke component
 func return_type():
 	return component_type
+
+##Destroy the object when it is dropped in dropable area
+func destroy_me():
+	queue_free()
