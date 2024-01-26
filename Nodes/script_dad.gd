@@ -25,15 +25,7 @@ func _on_timer_timeout():
 	
 	match state:
 		DAD_STATES.off:
-			#start a joke
-
-			print("starting to pick a joke")
-			current_joke = jokes.pick_random()
-			current_joke.reset_progress()
-			print("trying to load joke " + current_joke.get_line().text)
-			my_textbox.display_text(current_joke.get_line().text)
-			state = DAD_STATES.joke
-			print("joke started")
+			switch_state(DAD_STATES.joke)
 			
 		DAD_STATES.joke:
 			#progress joke line
@@ -42,21 +34,52 @@ func _on_timer_timeout():
 			if(current_joke.is_done()):
 				#end joke
 				if(current_joke.is_activated()):
-					state = DAD_STATES.off
-					#also start the timer
+					switch_state(DAD_STATES.off)
 				else:
-					state = DAD_STATES.dead
-					print("died")
+					switch_state(DAD_STATES.dead)
 			else:
 				#progress lines
-				current_joke.next_line()
-				print(current_joke.get_line().text)
-				my_textbox.display_text(current_joke.get_line().text)
-			
+				var _line = current_joke.next_line()
+				print(_line.text)
+				my_textbox.display_text(_line.text)
+				my_timer.start(_line.time)
+				
 		DAD_STATES.dead:
 			#do nothing
 			print("dead dad stays dead")
 	
-	var num = rnd.randf_range(2.0, 6.0)
-	#print("stopped and set to " + str(num))
-	my_timer.start(num)
+
+
+func switch_state(new_state : DAD_STATES):
+	state = new_state
+		
+	match new_state:
+		DAD_STATES.off:
+			print("returned to neutral")
+			my_textbox.display_text("")
+			var num = rnd.randf_range(2.0, 6.0)
+			print("cooldown set to " + str(num))
+			my_timer.start(num)
+		
+		DAD_STATES.joke:
+			#start a joke
+			print("joke started")
+
+			#pick a joke
+			current_joke = jokes.pick_random()
+			current_joke.reset_progress()
+			
+			#send the joke to dialogue
+			var _line = current_joke.get_line()
+			print(_line.text)
+			my_textbox.display_text(_line.text)
+			
+			#logic
+			state = DAD_STATES.joke
+			print("timer: " + str(_line.time))
+			my_timer.start(_line.time)
+		
+		DAD_STATES.dead:
+			print("died")
+			#change sprite
+			

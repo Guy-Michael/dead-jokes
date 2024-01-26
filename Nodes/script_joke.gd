@@ -16,6 +16,7 @@ func get_line():
 	return lines[current_line_index]
 func next_line():
 	current_line_index += 1
+	return get_line()
 func is_done():
 	return current_line_index >= len(lines)-1
 func is_activated():

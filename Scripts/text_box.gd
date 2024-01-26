@@ -16,6 +16,7 @@ var punc_time = 0.2*speed_mult
 signal finished_displaying()
 
 func display_text(text_to_display: String):
+	print("  - displaying: " + text_to_display)
 	text = text_to_display
 	
 	#await resized
@@ -30,18 +31,19 @@ func display_text(text_to_display: String):
 	#global_position.x -= size.x/2
 	#global_position.y -= size.y + 24; #adjust!
 	
-	#label.text = ""
+	label.text = ""
+	letter_index = 0
 	_display_letter()
 	
 func _display_letter():
 	
-	letter_index += 1
 	
 	if letter_index >= text.length():
 		finished_displaying.emit()
 		return
 	
 	label.text += text[letter_index]
+	#print(label.text)
 	
 	match text[letter_index]:
 		"!", ".", ",", "?":
@@ -50,6 +52,8 @@ func _display_letter():
 			timer.start(space_time)
 		_:
 			timer.start(letter_time)
-
+			
+	letter_index += 1	
+	
 func _on_timer_timeout():
 	_display_letter()
