@@ -6,12 +6,12 @@
 [sub_resource type="Resource" id="Resource_yppru"]
 script = ExtResource("1_lp1pq")
 text = "a man went and then..."
-time = 2.0
+time = 3.0
 
 [sub_resource type="Resource" id="Resource_1fm6n"]
 script = ExtResource("1_lp1pq")
 text = "boom shnizel!"
-time = 2.0
+time = 3.0
 
 [resource]
 script = ExtResource("1_le08i")

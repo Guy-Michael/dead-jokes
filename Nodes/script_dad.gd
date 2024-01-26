@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 class_name class_dad
 
 enum DAD_STATES{
@@ -12,6 +12,7 @@ enum DAD_STATES{
 var current_joke = -1
 @onready var my_timer = $timer
 @onready var my_textbox = $TextBox
+@onready var my_sprite = $sprite
 @onready var rnd = RandomNumberGenerator.new()
 @onready var state = DAD_STATES.off
 
@@ -49,7 +50,6 @@ func _on_timer_timeout():
 			print("dead dad stays dead")
 	
 
-
 func switch_state(new_state : DAD_STATES):
 	state = new_state
 		
@@ -60,6 +60,7 @@ func switch_state(new_state : DAD_STATES):
 			var num = rnd.randf_range(2.0, 6.0)
 			print("cooldown set to " + str(num))
 			my_timer.start(num)
+			my_sprite.set_frame(0)
 		
 		DAD_STATES.joke:
 			#start a joke
@@ -78,8 +79,11 @@ func switch_state(new_state : DAD_STATES):
 			state = DAD_STATES.joke
 			print("timer: " + str(_line.time))
 			my_timer.start(_line.time)
-		
+			my_sprite.set_frame(1)
+			
 		DAD_STATES.dead:
 			print("died")
+			my_textbox.display_text("")
+			my_sprite.set_frame(2)
 			#change sprite
 			
