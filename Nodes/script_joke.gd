@@ -28,7 +28,7 @@ func is_activated():
 	return state == JOKE_STATES.won
 func is_trigger_win(action):
 	return lines[current_line_index].accepted_action_indexes.has(action)
-func send_action(action : globals.Joke_Component):
+func send_action(action : globals.ACTIONS):
 	
 	#abort if already answered
 	if(state != JOKE_STATES.unanswered):

@@ -21,9 +21,9 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_pressed("clap"):
-		send_action(globals.Joke_Component.CLAP)
+		send_action(globals.ACTIONS.CLAP)
 	if Input.is_action_pressed("laugh"):
-		send_action(globals.Joke_Component.LAUGH)
+		send_action(globals.ACTIONS.LAUGH)
 func _on_timer_timeout():
 	
 	match state:
@@ -90,12 +90,12 @@ func switch_state(new_state : DAD_STATES):
 			my_sprite.set_frame(2)
 			#change sprite
 
-func send_action(_action: globals.Joke_Component):
+func send_action(_action: globals.ACTIONS):
 	var _text = ""
 	match _action:
-		globals.Joke_Component.CLAP:
+		globals.ACTIONS.CLAP:
 			_text = "clap"
-		globals.Joke_Component.LAUGH:
+		globals.ACTIONS.LAUGH:
 			_text = "laugh"
 	print(_text)
 	

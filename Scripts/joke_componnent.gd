@@ -5,7 +5,7 @@ var is_inside_dropable = false	#Is the object in a dropabale area
 var body_ref	#Refrence to the dropable area when the object enters it
 var offset: Vector2		#For maintaing the position of the object relative to the mouse pos
 var inital_pos: Vector2		#Keeps the inital position of the object
-@export var component_type: globals.Joke_Component 
+@export var component_type: globals.ACTIONS 
 
 func _process(_delta):
 	if draggable:
