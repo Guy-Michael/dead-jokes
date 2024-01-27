@@ -49,6 +49,8 @@ func _on_timer_timeout():
 				#progress lines
 				var _line = current_joke.next_line()
 				my_textbox.display_text(_line.text)
+				if(_line.get_activator() and globals.hint_active):
+					my_textbox.display_hint()
 				my_timer.start(_line.time)
 				
 		DAD_STATES.dead:
@@ -66,6 +68,9 @@ func switch_state(new_state : DAD_STATES):
 			my_timer.start(num)
 			my_sprite.set_frame(0)
 			current_joke = -1
+			
+			#disable hint
+			globals.hint_active = false
 		
 		DAD_STATES.joke:
 			#start a joke
@@ -97,7 +102,7 @@ func switch_state(new_state : DAD_STATES):
 			globals.hp -= 1
 			if(globals.hp == 0):
 				%ost_source.stop()
-			
+
 
 func send_action(_action: globals.ACTIONS):
 	
@@ -106,10 +111,14 @@ func send_action(_action: globals.ACTIONS):
 		var _right = current_joke.is_activated()
 		
 		if _right:
-			win_sfx_source.play()			
+			win_sfx_source.play()
 			my_textbox.set_texture(1)
+			globals.hint_active = false
 		else:
+			#if globals.hint_active:
+				#my_textbox.set_texture(2)
+			#else:
 			switch_state(DAD_STATES.dead)
 			
 		return _right
-	return false
+	return true
