@@ -41,25 +41,26 @@ position = Vector2(24, 247)
 texture = ExtResource("2_qav1c")
 metadata/_edit_lock_ = true
 
-[node name="joke_componnent" parent="." instance=ExtResource("6_x64ke")]
+[node name="clap_left" parent="." instance=ExtResource("6_x64ke")]
 position = Vector2(-144, 344)
 scale = Vector2(0.2, 0.2)
 component_type = 1
 
-[node name="joke_componnent2" parent="." instance=ExtResource("6_x64ke")]
+[node name="clap_middle" parent="." instance=ExtResource("6_x64ke")]
 position = Vector2(8, 336)
 scale = Vector2(0.2, 0.2)
 component_type = 1
 
-[node name="joke_componnent3" parent="." instance=ExtResource("6_x64ke")]
+[node name="clap_right" parent="." instance=ExtResource("6_x64ke")]
 position = Vector2(168, 336)
 scale = Vector2(0.2, 0.2)
 component_type = 1
 
-[node name="dadLeft" parent="." instance=ExtResource("3_dl2ld")]
+[node name="dadLeft" parent="." node_paths=PackedStringArray("my_clap_drag") instance=ExtResource("3_dl2ld")]
 z_index = 1
 position = Vector2(24, 247)
 jokes = Array[Resource("res://Nodes/script_joke.gd")]([ExtResource("5_tvryu")])
+my_clap_drag = NodePath("../clap_left")
 joke_sfxs = Array[Resource]([ExtResource("6_5mufv"), ExtResource("7_qmj10"), ExtResource("8_g0y32")])
 win_sfxs = Array[Resource]([ExtResource("9_461ow"), ExtResource("10_iyvuk"), ExtResource("11_fk0sw")])
 death_sfxs = Array[Resource]([ExtResource("12_k3hgh")])
@@ -73,11 +74,12 @@ offset_bottom = -71.0
 [node name="timer" parent="dadLeft" index="1"]
 wait_time = 4.83719
 
-[node name="dadMiddle" parent="." instance=ExtResource("3_dl2ld")]
+[node name="dadMiddle" parent="." node_paths=PackedStringArray("my_clap_drag") instance=ExtResource("3_dl2ld")]
 position = Vector2(24, 247)
 cooldown_min = 3.0
 cooldown_max = 7.0
 textbox_pos = Vector2(160, 0)
+my_clap_drag = NodePath("../clap_middle")
 joke_sfxs = Array[Resource]([ExtResource("9_n64u5"), ExtResource("14_a1oa0")])
 win_sfxs = Array[Resource]([ExtResource("15_4o37q"), ExtResource("16_jiuxr"), ExtResource("10_3ymp2")])
 death_sfxs = Array[Resource]([ExtResource("12_k3hgh")])
@@ -97,13 +99,14 @@ wait_time = 5.73538
 [node name="sprite" parent="dadMiddle" index="2"]
 texture = ExtResource("5_kb0q6")
 
-[node name="dadRight" parent="." instance=ExtResource("3_dl2ld")]
+[node name="dadRight" parent="." node_paths=PackedStringArray("my_clap_drag") instance=ExtResource("3_dl2ld")]
 z_index = 3
 position = Vector2(24, 247)
 jokes = Array[Resource("res://Nodes/script_joke.gd")]([ExtResource("7_887qx")])
 cooldown_min = 0.0
 cooldown_max = 4.0
 textbox_pos = Vector2(320, 0)
+my_clap_drag = NodePath("../clap_right")
 joke_sfxs = Array[Resource]([ExtResource("6_q3p1m"), ExtResource("10_qhktk")])
 win_sfxs = Array[Resource]([ExtResource("7_mqkum"), ExtResource("23_0xmk2")])
 death_sfxs = Array[Resource]([ExtResource("12_k3hgh")])

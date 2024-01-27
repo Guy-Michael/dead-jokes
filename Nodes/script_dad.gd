@@ -16,6 +16,7 @@ enum SFX{
 @export var cooldown_min = 2.0
 @export var cooldown_max = 5.0
 @export var textbox_pos: Vector2 = Vector2(1,1)
+@export var my_clap_drag: Node
 
 @export_group("sounds")
 @export var joke_sfxs: Array[Resource]
@@ -111,7 +112,9 @@ func switch_state(new_state : DAD_STATES):
 			globals.hp -= 1
 			if(globals.hp == 0):
 				%ost_source.stop()
-
+			
+			#destroy clap
+			my_clap_drag.queue_free()
 
 func send_action(_action: globals.ACTIONS):
 	
@@ -131,6 +134,7 @@ func send_action(_action: globals.ACTIONS):
 			3
 		return _right
 	return true
+	
 func play_sfx(index: SFX):
 	var arr = []
 	match index:
