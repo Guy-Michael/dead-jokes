@@ -1,13 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://ca6sv7rqq7oi3"]
+[gd_scene load_steps=14 format=3 uid="uid://ca6sv7rqq7oi3"]
 
 [ext_resource type="Texture2D" uid="uid://7ixsbmxqp5t1" path="res://Sprites/table.png" id="1_05ipf"]
 [ext_resource type="Texture2D" uid="uid://qlo17h104lij" path="res://Sprites/bg.png" id="2_qav1c"]
 [ext_resource type="PackedScene" uid="uid://cc6nt4n6ymqrq" path="res://Nodes/node_dad.tscn" id="3_dl2ld"]
 [ext_resource type="Texture2D" uid="uid://cbuu3j7xy8mm3" path="res://Sprites/dad middle.png" id="5_kb0q6"]
-[ext_resource type="Resource" uid="uid://d8bc33wm342e" path="res://jokes/joke_aba.tres" id="5_tvryu"]
+[ext_resource type="Resource" uid="uid://d8bc33wm342e" path="res://jokes/joke_belt.tres" id="5_tvryu"]
 [ext_resource type="Texture2D" uid="uid://2re5y50v84qj" path="res://Sprites/dad right.png" id="6_iwfof"]
+[ext_resource type="AudioStream" uid="uid://c4h58c6ah8ve5" path="res://Sounds/dad 2 joke 1.wav" id="6_q3p1m"]
 [ext_resource type="PackedScene" uid="uid://xjvq3x82cr55" path="res://Scenes/draggable_action.tscn" id="6_x64ke"]
-[ext_resource type="Resource" uid="uid://ctifsar3w38fx" path="res://jokes/joke_shnizel.tres" id="7_887qx"]
+[ext_resource type="Resource" uid="uid://ctifsar3w38fx" path="res://jokes/joke_desert.tres" id="7_887qx"]
+[ext_resource type="AudioStream" uid="uid://8x1qoouho0rw" path="res://Sounds/dad 2 win 2.wav" id="7_mqkum"]
+[ext_resource type="AudioStream" uid="uid://jey405s8ksax" path="res://Sounds/ost.wav" id="9_qib4u"]
+[ext_resource type="AudioStream" uid="uid://d3a3uq3ml8yjr" path="res://Sounds/game_jam_2.wav" id="9_xbbn6"]
+[ext_resource type="AudioStream" uid="uid://dhn5b02a351cv" path="res://Sounds/dad 2 win 1.wav" id="10_qhktk"]
 
 [node name="MainScene" type="Node2D"]
 position = Vector2(216, -112)
@@ -51,10 +56,18 @@ offset_right = -80.0
 offset_bottom = -71.0
 
 [node name="timer" parent="dadLeft" index="1"]
-wait_time = 2.24727
+wait_time = 4.55528
+
+[node name="sfx_joke" parent="dadLeft" index="4"]
+stream = ExtResource("6_q3p1m")
+
+[node name="sfx_win" parent="dadLeft" index="5"]
+stream = ExtResource("7_mqkum")
 
 [node name="dadMiddle" parent="." instance=ExtResource("3_dl2ld")]
 position = Vector2(24, 247)
+cooldown_min = 3.0
+cooldown_max = 7.0
 textbox_pos = Vector2(160, 0)
 
 [node name="TextBox" parent="dadMiddle" index="0"]
@@ -64,15 +77,23 @@ offset_right = 80.0
 offset_bottom = -71.0
 
 [node name="timer" parent="dadMiddle" index="1"]
-wait_time = 4.79138
+wait_time = 5.69724
 
 [node name="sprite" parent="dadMiddle" index="2"]
 texture = ExtResource("5_kb0q6")
+
+[node name="sfx_joke" parent="dadMiddle" index="4"]
+stream = ExtResource("9_xbbn6")
+
+[node name="sfx_win" parent="dadMiddle" index="5"]
+stream = ExtResource("10_qhktk")
 
 [node name="dadRight" parent="." instance=ExtResource("3_dl2ld")]
 z_index = 3
 position = Vector2(24, 247)
 jokes = Array[Resource("res://Nodes/script_joke.gd")]([ExtResource("7_887qx")])
+cooldown_min = 0.0
+cooldown_max = 4.0
 textbox_pos = Vector2(320, 0)
 
 [node name="TextBox" parent="dadRight" index="0"]
@@ -82,10 +103,20 @@ offset_right = 240.0
 offset_bottom = -71.0
 
 [node name="timer" parent="dadRight" index="1"]
-wait_time = 2.51307
+wait_time = 0.878175
 
 [node name="sprite" parent="dadRight" index="2"]
 texture = ExtResource("6_iwfof")
+
+[node name="sfx_joke" parent="dadRight" index="4"]
+stream = ExtResource("6_q3p1m")
+
+[node name="sfx_win" parent="dadRight" index="5"]
+stream = ExtResource("10_qhktk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_qib4u")
+autoplay = true
 
 [editable path="dadLeft"]
 [editable path="dadMiddle"]
