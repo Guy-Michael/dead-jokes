@@ -10,6 +10,9 @@ var offset: Vector2		#For maintaing the position of the object relative to the m
 @export var hover_scale: float
 @export var normal_scale: float
 
+func _ready():
+	scale = Vector2(normal_scale,normal_scale)
+	
 func _process(_delta):
 	if draggable:
 		if Input.is_action_just_pressed("click"):
@@ -23,7 +26,6 @@ func _process(_delta):
 			globals.is_dragging = false
 			var tween = get_tree().create_tween()
 			if is_inside_dropable:
-				print("dropped!")
 				dropped_on.send_action(component_type)
 				#var t = Tween.new()
 				#t.tween_property(self, "scale", Vector2(0,0), 0.2).set_ease(Tween.EASE_OUT)		
@@ -45,7 +47,6 @@ func _on_area_2d_mouse_exited():
 		scale = Vector2(normal_scale, normal_scale)		#Scaling the sprite (more for the visual effect)
 		
 func _on_area_2d_body_entered(body:StaticBody2D):
-	print("entered  area")
 	if body.is_in_group('droppable'):		#TODO:Create the 'dropable' group and than add the drop areas to the group
 		is_inside_dropable = true
 		body_ref = body
@@ -61,4 +62,9 @@ func return_type():
 
 ##Destroy the object when it is dropped in dropable area
 func destroy_me():
-	queue_free()
+	#queue_free()
+	global_position = initial_pos
+	
+func set_pos(new_pos: Vector2):
+	global_position = new_pos
+	initial_pos = new_pos

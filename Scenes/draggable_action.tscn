@@ -12,6 +12,7 @@ hover_scale = 0.3
 normal_scale = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 10
 texture = ExtResource("2_6sokm")
 
 [node name="Area2D" type="Area2D" parent="."]
