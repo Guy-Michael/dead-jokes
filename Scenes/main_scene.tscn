@@ -1,22 +1,28 @@
-[gd_scene load_steps=26 format=3 uid="uid://ca6sv7rqq7oi3"]
+[gd_scene load_steps=43 format=3 uid="uid://ca6sv7rqq7oi3"]
 
 [ext_resource type="Texture2D" uid="uid://7ixsbmxqp5t1" path="res://Sprites/table.png" id="1_05ipf"]
 [ext_resource type="Texture2D" uid="uid://qlo17h104lij" path="res://Sprites/bg.png" id="2_qav1c"]
 [ext_resource type="PackedScene" uid="uid://cc6nt4n6ymqrq" path="res://Nodes/node_dad.tscn" id="3_dl2ld"]
 [ext_resource type="Texture2D" uid="uid://cbuu3j7xy8mm3" path="res://Sprites/dad middle.png" id="5_kb0q6"]
+[ext_resource type="Resource" uid="uid://bxopjxr7lvjte" path="res://jokes/joke_bar.tres" id="5_lldj4"]
+[ext_resource type="Resource" uid="uid://ibplf2tb425o" path="res://jokes/joke_birds.tres" id="5_qjl1h"]
 [ext_resource type="Resource" uid="uid://d8bc33wm342e" path="res://jokes/joke_belt.tres" id="5_tvryu"]
 [ext_resource type="AudioStream" uid="uid://ck3cv048ccji0" path="res://Sounds/dad 1 joke 1.wav" id="6_5mufv"]
+[ext_resource type="Resource" uid="uid://3ek6gaweg8cu" path="res://jokes/joke_brain.tres" id="6_ew6h8"]
 [ext_resource type="Texture2D" uid="uid://2re5y50v84qj" path="res://Sprites/dad right.png" id="6_iwfof"]
 [ext_resource type="AudioStream" uid="uid://c4h58c6ah8ve5" path="res://Sounds/dad 2 joke 1.wav" id="6_q3p1m"]
 [ext_resource type="PackedScene" uid="uid://xjvq3x82cr55" path="res://Scenes/draggable_action.tscn" id="6_x64ke"]
-[ext_resource type="Resource" uid="uid://ctifsar3w38fx" path="res://jokes/joke_desert.tres" id="7_887qx"]
+[ext_resource type="Resource" uid="uid://bxtkk5518wdtp" path="res://jokes/joke_chicken.tres" id="7_887qx"]
 [ext_resource type="AudioStream" uid="uid://8x1qoouho0rw" path="res://Sounds/dad 2 win 2.wav" id="7_mqkum"]
 [ext_resource type="AudioStream" uid="uid://dc7ashiuveph0" path="res://Sounds/dad 1 joke 2.wav" id="7_qmj10"]
 [ext_resource type="AudioStream" uid="uid://dhq6n6u82053x" path="res://Sounds/dad 1 joke 3.wav" id="8_g0y32"]
+[ext_resource type="Resource" uid="uid://c2p6emvidtqio" path="res://jokes/joke_dogs.tres" id="8_q1nrg"]
 [ext_resource type="AudioStream" uid="uid://b6purqrckn03i" path="res://Sounds/dad 1 win 1.wav" id="9_461ow"]
 [ext_resource type="AudioStream" uid="uid://dodwefeg7p374" path="res://Sounds/dad 3 joke 1.wav" id="9_n64u5"]
 [ext_resource type="AudioStream" uid="uid://jey405s8ksax" path="res://Sounds/ost.wav" id="9_qib4u"]
+[ext_resource type="Resource" uid="uid://d0f3c2po5syda" path="res://jokes/joke_doors.tres" id="9_su27k"]
 [ext_resource type="AudioStream" uid="uid://bj8jdu3qx4d8j" path="res://Sounds/dad 3 win 3.wav" id="10_3ymp2"]
+[ext_resource type="Resource" uid="uid://bhbh2nx0adk74" path="res://jokes/joke_drummer.tres" id="10_6hqit"]
 [ext_resource type="AudioStream" uid="uid://ckhqb1j57xj4c" path="res://Sounds/dad 1 win 2.wav" id="10_iyvuk"]
 [ext_resource type="AudioStream" uid="uid://dhn5b02a351cv" path="res://Sounds/dad 2 win 1.wav" id="10_qhktk"]
 [ext_resource type="AudioStream" uid="uid://c5gm0raggknni" path="res://Sounds/dad 1 win 3.wav" id="11_fk0sw"]
@@ -24,7 +30,18 @@
 [ext_resource type="AudioStream" uid="uid://dn7y48ram8ld1" path="res://Sounds/dad 3 joke 2.wav" id="14_a1oa0"]
 [ext_resource type="AudioStream" uid="uid://idw6iqkk4h64" path="res://Sounds/dad 3 win 1.wav" id="15_4o37q"]
 [ext_resource type="AudioStream" uid="uid://dnvt4j5v0n0oh" path="res://Sounds/dad 3 win 2.wav" id="16_jiuxr"]
+[ext_resource type="Resource" uid="uid://jdyxa7sf0bn8" path="res://jokes/joke_fart.tres" id="19_mjk4f"]
+[ext_resource type="Resource" uid="uid://dcr1wouowxodx" path="res://jokes/joke_grandma.tres" id="20_1gx58"]
+[ext_resource type="Resource" uid="uid://buq8rymuxq6rc" path="res://jokes/joke_eggplant.tres" id="20_lue1j"]
+[ext_resource type="Resource" uid="uid://sh7p2elyg42e" path="res://jokes/joke_healthy.tres" id="21_5py08"]
+[ext_resource type="Resource" uid="uid://c2d2musf84qdm" path="res://jokes/joke_humus.tres" id="22_axmf0"]
 [ext_resource type="AudioStream" uid="uid://blqw1pqer7yod" path="res://Sounds/dad 2 win 3.wav" id="23_0xmk2"]
+[ext_resource type="Resource" uid="uid://r2b7vjml8iaq" path="res://jokes/joke_parking.tres" id="23_sl0hb"]
+[ext_resource type="Resource" uid="uid://kc81kxr5aglw" path="res://jokes/joke_plantes.tres" id="24_ft3og"]
+[ext_resource type="Resource" uid="uid://cukewngm1pww4" path="res://jokes/joke_roach.tres" id="32_ht37c"]
+[ext_resource type="Resource" uid="uid://b6b4wuu1tgc8r" path="res://jokes/joke_watermelon.tres" id="33_f216e"]
+[ext_resource type="Resource" uid="uid://36yt74jf2uf4" path="res://jokes/joke_work.tres" id="34_an47q"]
+[ext_resource type="Resource" uid="uid://b8acei25n3nh8" path="res://jokes/joke_zehava.tres" id="35_8mvog"]
 
 [node name="MainScene" type="Node2D"]
 position = Vector2(216, -112)
@@ -59,8 +76,10 @@ component_type = 1
 [node name="dadLeft" parent="." node_paths=PackedStringArray("my_clap_drag") instance=ExtResource("3_dl2ld")]
 z_index = 1
 position = Vector2(24, 247)
-jokes = Array[Resource("res://Nodes/script_joke.gd")]([ExtResource("5_tvryu")])
+jokes = Array[Resource("res://Nodes/script_joke.gd")]([ExtResource("5_lldj4"), ExtResource("5_tvryu"), ExtResource("5_qjl1h"), ExtResource("6_ew6h8"), ExtResource("8_q1nrg"), ExtResource("9_su27k"), ExtResource("35_8mvog")])
+cooldown_max = 8.0
 my_clap_drag = NodePath("../clap_left")
+time_mult = 2.0
 joke_sfxs = Array[Resource]([ExtResource("6_5mufv"), ExtResource("7_qmj10"), ExtResource("8_g0y32")])
 win_sfxs = Array[Resource]([ExtResource("9_461ow"), ExtResource("10_iyvuk"), ExtResource("11_fk0sw")])
 death_sfxs = Array[Resource]([ExtResource("12_k3hgh")])
@@ -72,12 +91,13 @@ offset_right = -80.0
 offset_bottom = -71.0
 
 [node name="timer" parent="dadLeft" index="1"]
-wait_time = 4.83719
+wait_time = 2.0
 
 [node name="dadMiddle" parent="." node_paths=PackedStringArray("my_clap_drag") instance=ExtResource("3_dl2ld")]
 position = Vector2(24, 247)
+jokes = Array[Resource("res://Nodes/script_joke.gd")]([ExtResource("10_6hqit"), ExtResource("20_lue1j"), ExtResource("20_1gx58"), ExtResource("24_ft3og"), ExtResource("33_f216e"), ExtResource("34_an47q")])
 cooldown_min = 3.0
-cooldown_max = 7.0
+cooldown_max = 8.0
 textbox_pos = Vector2(160, 0)
 my_clap_drag = NodePath("../clap_middle")
 joke_sfxs = Array[Resource]([ExtResource("9_n64u5"), ExtResource("14_a1oa0")])
@@ -94,7 +114,7 @@ offset_bottom = -71.0
 color = Color(1, 1, 1, 0.415686)
 
 [node name="timer" parent="dadMiddle" index="1"]
-wait_time = 5.73538
+wait_time = 6.0
 
 [node name="sprite" parent="dadMiddle" index="2"]
 texture = ExtResource("5_kb0q6")
@@ -102,9 +122,9 @@ texture = ExtResource("5_kb0q6")
 [node name="dadRight" parent="." node_paths=PackedStringArray("my_clap_drag") instance=ExtResource("3_dl2ld")]
 z_index = 3
 position = Vector2(24, 247)
-jokes = Array[Resource("res://Nodes/script_joke.gd")]([ExtResource("7_887qx")])
+jokes = Array[Resource("res://Nodes/script_joke.gd")]([ExtResource("7_887qx"), ExtResource("19_mjk4f"), ExtResource("21_5py08"), ExtResource("22_axmf0"), ExtResource("23_sl0hb"), ExtResource("32_ht37c")])
 cooldown_min = 0.0
-cooldown_max = 4.0
+cooldown_max = 6.0
 textbox_pos = Vector2(320, 0)
 my_clap_drag = NodePath("../clap_right")
 joke_sfxs = Array[Resource]([ExtResource("6_q3p1m"), ExtResource("10_qhktk")])
@@ -118,7 +138,7 @@ offset_right = 240.0
 offset_bottom = -71.0
 
 [node name="timer" parent="dadRight" index="1"]
-wait_time = 1.69124
+wait_time = 9.0
 
 [node name="sprite" parent="dadRight" index="2"]
 texture = ExtResource("6_iwfof")

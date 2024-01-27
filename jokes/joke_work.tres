@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="class_joke" load_steps=6 format=3 uid="uid://c12pcop4mu8l6"]
+[gd_resource type="Resource" script_class="class_joke" load_steps=6 format=3 uid="uid://36yt74jf2uf4"]
 
 [ext_resource type="Script" path="res://Scripts/script_joke_line.gd" id="1_f6kmu"]
 [ext_resource type="Script" path="res://Nodes/script_joke.gd" id="1_xgfvk"]
@@ -6,20 +6,20 @@
 [sub_resource type="Resource" id="Resource_btg3h"]
 script = ExtResource("1_f6kmu")
 text = "למפעל העוסק בחומר נפץ דרוש עובד יצור"
-time = 2.0
-accepted_indexes = Array[int]([])
+time = 4.0
+is_activator = false
 
 [sub_resource type="Resource" id="Resource_ta4y6"]
 script = ExtResource("1_f6kmu")
 text = "מובטחת סביבת עבודה צעירה "
-time = 2.0
-accepted_indexes = Array[int]([])
+time = 4.0
+is_activator = false
 
 [sub_resource type="Resource" id="Resource_wmjoc"]
 script = ExtResource("1_f6kmu")
 text = "ודינמיט"
-time = 1.0
-accepted_indexes = Array[int]([2])
+time = 3.0
+is_activator = true
 
 [resource]
 script = ExtResource("1_xgfvk")

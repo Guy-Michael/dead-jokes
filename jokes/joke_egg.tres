@@ -5,21 +5,21 @@
 
 [sub_resource type="Resource" id="Resource_ju42u"]
 script = ExtResource("1_40hdw")
-text = "אלפסי, שמע אתמול מה היה"
-time = 1.5
-accepted_indexes = Array[int]([])
+text = "אלפסי, שמע אתמול מה היה אתמול אתה בשוק"
+time = 4.0
+is_activator = false
 
 [sub_resource type="Resource" id="Resource_y42la"]
 script = ExtResource("1_40hdw")
 text = "כולי מכין בצה היא עפה למים רותחים"
-time = 2.0
-accepted_indexes = Array[int]([])
+time = 4.0
+is_activator = false
 
 [sub_resource type="Resource" id="Resource_v00ta"]
 script = ExtResource("1_40hdw")
 text = "מצבה קשה."
-time = 2.0
-accepted_indexes = Array[int]([])
+time = 4.0
+is_activator = true
 
 [resource]
 script = ExtResource("1_cig47")

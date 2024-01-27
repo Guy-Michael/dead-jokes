@@ -34,9 +34,7 @@ func send_action(action : globals.ACTIONS):
 	if(state != JOKE_STATES.unanswered):
 		return true
 	
-	if len(lines[current_line_index].accepted_indexes)>0 or lines[current_line_index].accepted_indexes.has(action):
+	if lines[current_line_index].get_activator():
 		state = JOKE_STATES.won
 	else:
 		state = JOKE_STATES.lost
-		
-	print("activated: " + str(state) + ". accepted: " + str(lines[current_line_index].accepted_indexes))

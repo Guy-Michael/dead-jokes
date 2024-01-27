@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="class_joke" load_steps=6 format=3 uid="uid://dikv0v61hg6ku"]
+[gd_resource type="Resource" script_class="class_joke" load_steps=6 format=3 uid="uid://kc81kxr5aglw"]
 
 [ext_resource type="Script" path="res://Scripts/script_joke_line.gd" id="1_7jgqd"]
 [ext_resource type="Script" path="res://Nodes/script_joke.gd" id="1_pakfh"]
@@ -6,20 +6,20 @@
 [sub_resource type="Resource" id="Resource_521xd"]
 script = ExtResource("1_7jgqd")
 text = "תמיד אומרים לי שאני כוכב"
-time = 2.0
-accepted_indexes = Array[int]([])
+time = 4.0
+is_activator = false
 
 [sub_resource type="Resource" id="Resource_ea1vh"]
 script = ExtResource("1_7jgqd")
-text = "אני מאדים"
-time = 1.0
-accepted_indexes = Array[int]([])
+text = "אני מאדים... ובצדק."
+time = 3.0
+is_activator = true
 
 [sub_resource type="Resource" id="Resource_q4alf"]
 script = ExtResource("1_7jgqd")
-text = "ובצדק"
-time = 1.0
-accepted_indexes = Array[int]([2])
+text = "לכוכבים שמות מצחיקים בעברית."
+time = 5.0
+is_activator = true
 
 [resource]
 script = ExtResource("1_pakfh")

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="class_joke" load_steps=5 format=3 uid="uid://dd0eakub6qbg6"]
+
+[ext_resource type="Script" path="res://Scripts/script_joke_line.gd" id="1_0mojd"]
+[ext_resource type="Script" path="res://Nodes/script_joke.gd" id="1_trvlh"]
+
+[sub_resource type="Resource" id="Resource_mwy1t"]
+script = ExtResource("1_0mojd")
+text = "כפרע עליך עיניים של אבא"
+time = 4.0
+is_activator = false
+
+[sub_resource type="Resource" id="Resource_6lgh3"]
+script = ExtResource("1_0mojd")
+text = "תן בכפיים כשאני מסיים בדיחה, תשה ג'סטה"
+time = 5.0
+is_activator = true
+
+[resource]
+script = ExtResource("1_trvlh")
+lines = Array[ExtResource("1_0mojd")]([SubResource("Resource_mwy1t"), SubResource("Resource_6lgh3")])

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="class_joke" load_steps=6 format=3 uid="uid://n6iahqqw0knb"]
+[gd_resource type="Resource" script_class="class_joke" load_steps=6 format=3 uid="uid://bxtkk5518wdtp"]
 
 [ext_resource type="Script" path="res://Scripts/script_joke_line.gd" id="1_s8q5e"]
 [ext_resource type="Script" path="res://Nodes/script_joke.gd" id="2_jfghp"]

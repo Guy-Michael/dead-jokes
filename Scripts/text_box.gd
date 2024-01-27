@@ -4,13 +4,14 @@ extends MarginContainer
 @onready var timer = $timer
 @onready var ninePatch = $ninePatch
 @onready var hint_sprite = $hint
+@onready var display_speed_mult = 1
 
 const MAX_WIDTH = 256
 
 var text = ""
 var letter_index = 0
 
-var speed_mult = 2
+var speed_mult = 1.2
 var letter_time = 0.03*speed_mult
 var space_time = 0.06*speed_mult
 var punc_time = 0.2*speed_mult
@@ -60,11 +61,11 @@ func _display_letter():
 	
 	match text[letter_index]:
 		"!", ".", ",", "?":
-			timer.start(punc_time)
+			timer.start(punc_time*display_speed_mult)
 		" ":
-			timer.start(space_time)
+			timer.start(space_time*display_speed_mult)
 		_:
-			timer.start(letter_time)
+			timer.start(letter_time*display_speed_mult)
 			
 	letter_index += 1	
 	

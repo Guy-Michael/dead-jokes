@@ -71,3 +71,6 @@ func destroy_me():
 func set_pos(new_pos: Vector2):
 	global_position = new_pos
 	initial_pos = new_pos
+
+func _on_tree_exiting():
+	globals.is_dragging = false

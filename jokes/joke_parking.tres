@@ -1,19 +1,19 @@
-[gd_resource type="Resource" script_class="class_joke" load_steps=5 format=3 uid="uid://b0ud5ro7n2iu5"]
+[gd_resource type="Resource" script_class="class_joke" load_steps=5 format=3 uid="uid://r2b7vjml8iaq"]
 
 [ext_resource type="Script" path="res://Scripts/script_joke_line.gd" id="1_bi5bx"]
 [ext_resource type="Script" path="res://Nodes/script_joke.gd" id="1_q6pge"]
 
 [sub_resource type="Resource" id="Resource_rdl4v"]
 script = ExtResource("1_bi5bx")
-text = "הערתי לשכנה שהחבר שלה העמיד את הרכב בחניה אסורה,"
-time = 2.0
-accepted_indexes = Array[int]([])
+text = "הערתי לברכה השכנה שהחבר שלה העמיד את הרכב בחניה אסורה,"
+time = 4.0
+is_activator = false
 
 [sub_resource type="Resource" id="Resource_clthx"]
 script = ExtResource("1_bi5bx")
-text = "היא ענתה לי שהוא יזיז."
-time = 2.0
-accepted_indexes = Array[int]([0])
+text = "היא ענתה שהוא יזיז!"
+time = 5.0
+is_activator = true
 
 [resource]
 script = ExtResource("1_q6pge")

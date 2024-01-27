@@ -1,20 +1,32 @@
-[gd_resource type="Resource" script_class="class_joke" load_steps=5 format=3 uid="uid://84fypv4fdlqf"]
+[gd_resource type="Resource" script_class="class_joke" load_steps=7 format=3 uid="uid://c2d2musf84qdm"]
 
 [ext_resource type="Script" path="res://Scripts/script_joke_line.gd" id="1_j0b2a"]
 [ext_resource type="Script" path="res://Nodes/script_joke.gd" id="1_ypa8l"]
 
 [sub_resource type="Resource" id="Resource_j7w5b"]
 script = ExtResource("1_j0b2a")
-text = "טעמתי עכשיו את החומוס של צבר,"
-time = 2.0
-accepted_indexes = Array[int]([])
+text = "צ'מע קטע איזה חומוס אכלתי עכשיו"
+time = 4.0
+is_activator = false
 
 [sub_resource type="Resource" id="Resource_3eafo"]
 script = ExtResource("1_j0b2a")
-text = "הוא אחלה"
-time = 1.0
-accepted_indexes = Array[int]([2])
+text = "חומוס אחלה. "
+time = 4.0
+is_activator = true
+
+[sub_resource type="Resource" id="Resource_0cwxu"]
+script = ExtResource("1_j0b2a")
+text = "כמו החברה אחלה, איפה שניצן הבן של שימרית עובד"
+time = 5.0
+is_activator = true
+
+[sub_resource type="Resource" id="Resource_7vtet"]
+script = ExtResource("1_j0b2a")
+text = "מתי תמצא גם עבודה נורמאלית?"
+time = 4.0
+is_activator = true
 
 [resource]
 script = ExtResource("1_ypa8l")
-lines = Array[ExtResource("1_j0b2a")]([SubResource("Resource_j7w5b"), SubResource("Resource_3eafo")])
+lines = Array[ExtResource("1_j0b2a")]([SubResource("Resource_j7w5b"), SubResource("Resource_3eafo"), SubResource("Resource_0cwxu"), SubResource("Resource_7vtet")])

@@ -7,19 +7,19 @@
 script = ExtResource("1_27860")
 text = "שוטר עוצר את שמוליק"
 time = 3.0
-accepted_indexes = Array[int]([])
+is_activator = false
 
 [sub_resource type="Resource" id="Resource_klway"]
 script = ExtResource("1_27860")
-text = "שואל איפה החגורה"
-time = 2.0
-accepted_indexes = Array[int]([])
+text = "הוא שאל את מיידלע איפה החגורה"
+time = 3.0
+is_activator = false
 
 [sub_resource type="Resource" id="Resource_m1y5d"]
 script = ExtResource("1_27860")
 text = "\"לא נופלות לי המכנסיים\" חה חה"
 time = 4.0
-accepted_indexes = Array[int]([0])
+is_activator = true
 
 [resource]
 script = ExtResource("2_8fbjd")

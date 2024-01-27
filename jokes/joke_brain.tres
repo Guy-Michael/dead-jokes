@@ -1,20 +1,26 @@
-[gd_resource type="Resource" script_class="class_joke" load_steps=5 format=3 uid="uid://cht81swf5uh2f"]
+[gd_resource type="Resource" script_class="class_joke" load_steps=6 format=3 uid="uid://3ek6gaweg8cu"]
 
 [ext_resource type="Script" path="res://Nodes/script_joke.gd" id="1_40vjc"]
 [ext_resource type="Script" path="res://Scripts/script_joke_line.gd" id="1_duuvj"]
 
 [sub_resource type="Resource" id="Resource_hcb2r"]
 script = ExtResource("1_duuvj")
-text = "אכלתי היום מוח בפעם הראשונה"
-time = 2.0
-accepted_indexes = Array[int]([])
+text = "תקשיב לי מיידלע אכלתי היום מוח בפעם הראשונה"
+time = 5.0
+is_activator = false
 
 [sub_resource type="Resource" id="Resource_spn16"]
 script = ExtResource("1_duuvj")
 text = "היה תאים"
-time = 2.0
-accepted_indexes = Array[int]([2])
+time = 3.0
+is_activator = true
+
+[sub_resource type="Resource" id="Resource_b6gap"]
+script = ExtResource("1_duuvj")
+text = "תאים."
+time = 3.0
+is_activator = true
 
 [resource]
 script = ExtResource("1_40vjc")
-lines = Array[ExtResource("1_duuvj")]([SubResource("Resource_hcb2r"), SubResource("Resource_spn16")])
+lines = Array[ExtResource("1_duuvj")]([SubResource("Resource_hcb2r"), SubResource("Resource_spn16"), SubResource("Resource_b6gap")])

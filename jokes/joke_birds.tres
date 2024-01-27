@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="class_joke" load_steps=5 format=3 uid="uid://buih1ksce0o17"]
+[gd_resource type="Resource" script_class="class_joke" load_steps=7 format=3 uid="uid://ibplf2tb425o"]
 
 [ext_resource type="Script" path="res://Scripts/script_joke_line.gd" id="1_8fh80"]
 [ext_resource type="Script" path="res://Nodes/script_joke.gd" id="1_gejoe"]
@@ -6,15 +6,27 @@
 [sub_resource type="Resource" id="Resource_xd54x"]
 script = ExtResource("1_8fh80")
 text = "ידעתם שציפורים שונאות דיבוב?"
-time = 2.0
-accepted_indexes = Array[int]([])
+time = 5.0
+is_activator = false
 
 [sub_resource type="Resource" id="Resource_vjstm"]
 script = ExtResource("1_8fh80")
 text = "הן מעדיפות את שפת המקור"
-time = 2.0
-accepted_indexes = Array[int]([2])
+time = 3.0
+is_activator = false
+
+[sub_resource type="Resource" id="Resource_b4l6b"]
+script = ExtResource("1_8fh80")
+text = "חה חה חה חה"
+time = 3.0
+is_activator = true
+
+[sub_resource type="Resource" id="Resource_lljht"]
+script = ExtResource("1_8fh80")
+text = "מקור. כמו האף שלהן."
+time = 4.0
+is_activator = true
 
 [resource]
 script = ExtResource("1_gejoe")
-lines = Array[ExtResource("1_8fh80")]([SubResource("Resource_xd54x"), SubResource("Resource_vjstm")])
+lines = Array[ExtResource("1_8fh80")]([SubResource("Resource_xd54x"), SubResource("Resource_vjstm"), SubResource("Resource_b4l6b"), SubResource("Resource_lljht")])
