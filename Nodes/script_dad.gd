@@ -1,4 +1,4 @@
-@tool
+#@tool
 extends Node2D
 class_name class_dad
 
@@ -30,8 +30,6 @@ func _process(_delta):
 	if Engine.is_editor_hint():
 		my_textbox.global_position = Vector2(textbox_pos)
 
-
-		
 func _on_timer_timeout():
 	
 	match state:
@@ -40,7 +38,6 @@ func _on_timer_timeout():
 			
 		DAD_STATES.joke:
 			#progress joke line
-			print("progress joke")
 			
 			if(current_joke.is_done()):
 				#end joke
@@ -57,15 +54,13 @@ func _on_timer_timeout():
 		DAD_STATES.dead:
 			#do nothing
 			print("dead dad stays dead")
-	
+
 
 func switch_state(new_state : DAD_STATES):
 	state = new_state
 		
 	match new_state:
 		DAD_STATES.off:
-			print("returned to neutral")
-			win_sfx_source.play()
 			my_textbox.display_text("")
 			var num = rnd.randf_range(2.0, 6.0)
 			my_timer.start(num)
@@ -74,7 +69,6 @@ func switch_state(new_state : DAD_STATES):
 		
 		DAD_STATES.joke:
 			#start a joke
-			print("joke started")
 			joke_sfx_source.play()
 	
 			#pick a joke
@@ -95,8 +89,15 @@ func switch_state(new_state : DAD_STATES):
 			print("died")
 			death_sfx_source.play()
 			my_textbox.display_text("")
-			my_sprite.set_frame(2)
+			
 			#change sprite
+			my_sprite.set_frame(2)
+			
+			#stop ost
+			globals.hp -= 1
+			if(globals.hp == 0):
+				%ost_source.stop()
+			
 
 func send_action(_action: globals.ACTIONS):
 	
@@ -105,6 +106,10 @@ func send_action(_action: globals.ACTIONS):
 		var _right = current_joke.is_activated()
 		
 		if _right:
+			win_sfx_source.play()			
 			my_textbox.set_texture(1)
 		else:
 			switch_state(DAD_STATES.dead)
+			
+		return _right
+	return false
