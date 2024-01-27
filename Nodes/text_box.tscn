@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c70ghln7n3qxg"]
+[gd_scene load_steps=7 format=3 uid="uid://c70ghln7n3qxg"]
 
-[ext_resource type="Texture2D" uid="uid://dp82rvjhwxw7k" path="res://Sprites/speech bubble.png" id="1_k71af"]
-[ext_resource type="Script" path="res://Scripts/text_box.gd" id="1_vkut1"]
+[ext_resource type="Script" path="res://Scripts/text_box.gd" id="1_innyj"]
+[ext_resource type="Texture2D" uid="uid://8l4a303cib0i" path="res://Sprites/speech bubble normal.png" id="2_6s6tk"]
+[ext_resource type="Texture2D" uid="uid://clhqoha3iwugw" path="res://Sprites/speech bubble green.png" id="3_m2y6b"]
+[ext_resource type="Texture2D" uid="uid://ni0gj5um6on" path="res://Sprites/speech bubble red.png" id="4_c2rkp"]
+[ext_resource type="Texture2D" uid="uid://dp82rvjhwxw7k" path="res://Sprites/speech bubble.png" id="5_yqkgm"]
 
 [sub_resource type="FontFile" id="FontFile_nhoka"]
 cache/0/16/0/ascent = 0.0
@@ -42,34 +45,46 @@ cache/0/12/0/kerning_overrides/24/1 = Vector2(0, 0)
 cache/0/12/0/kerning_overrides/12/0 = Vector2(0, 0)
 
 [node name="TextBox" type="MarginContainer"]
-script = ExtResource("1_vkut1")
+anchors_preset = -1
+anchor_right = 0.333
+anchor_bottom = 0.119
+offset_right = 0.160004
+offset_bottom = -0.130001
+script = ExtResource("1_innyj")
+sprites_arr = Array[Texture]([ExtResource("2_6s6tk"), ExtResource("3_m2y6b"), ExtResource("4_c2rkp")])
+metadata/_edit_use_anchors_ = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="ninePatch" type="NinePatchRect" parent="."]
 layout_mode = 2
-texture = ExtResource("1_k71af")
-region_rect = Rect2(0, 0, 390, 200)
-patch_margin_left = 20
-patch_margin_top = 40
-patch_margin_right = 20
-patch_margin_bottom = 40
+texture = ExtResource("5_yqkgm")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="Label" type="Label" parent="MarginContainer"]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.278431)
 theme_override_fonts/font = SubResource("FontFile_nhoka")
 theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="letterDisplayTimer" type="Timer" parent="."]
+[node name="timer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
