@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="class_joke" load_steps=6 format=3 uid="uid://d8bc33wm342e"]
+
+[ext_resource type="Script" path="res://Scripts/script_joke_line.gd" id="1_27860"]
+[ext_resource type="Script" path="res://Nodes/script_joke.gd" id="2_8fbjd"]
+
+[sub_resource type="Resource" id="Resource_3m7bk"]
+script = ExtResource("1_27860")
+text = "שוטר עוצר את שמוליק"
+time = 3.0
+accepted_indexes = Array[int]([])
+
+[sub_resource type="Resource" id="Resource_klway"]
+script = ExtResource("1_27860")
+text = "שואל איפה החגורה"
+time = 2.0
+accepted_indexes = Array[int]([])
+
+[sub_resource type="Resource" id="Resource_m1y5d"]
+script = ExtResource("1_27860")
+text = "\"לא נופלות לי המכנסיים\" חה חה"
+time = 4.0
+accepted_indexes = Array[int]([0])
+
+[resource]
+script = ExtResource("2_8fbjd")
+lines = Array[ExtResource("1_27860")]([SubResource("Resource_3m7bk"), SubResource("Resource_klway"), SubResource("Resource_m1y5d")])
