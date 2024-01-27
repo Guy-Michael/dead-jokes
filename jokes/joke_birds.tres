@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="class_joke" load_steps=5 format=3 uid="uid://buih1ksce0o17"]
+
+[ext_resource type="Script" path="res://Scripts/script_joke_line.gd" id="1_8fh80"]
+[ext_resource type="Script" path="res://Nodes/script_joke.gd" id="1_gejoe"]
+
+[sub_resource type="Resource" id="Resource_xd54x"]
+script = ExtResource("1_8fh80")
+text = "ידעתם שציפורים שונאות דיבוב?"
+time = 2.0
+accepted_indexes = Array[int]([])
+
+[sub_resource type="Resource" id="Resource_vjstm"]
+script = ExtResource("1_8fh80")
+text = "הן מעדיפות את שפת המקור"
+time = 2.0
+accepted_indexes = Array[int]([2])
+
+[resource]
+script = ExtResource("1_gejoe")
+lines = Array[ExtResource("1_8fh80")]([SubResource("Resource_xd54x"), SubResource("Resource_vjstm")])

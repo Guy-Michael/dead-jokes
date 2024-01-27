@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="class_joke" load_steps=5 format=3 uid="uid://b5rnih3p6ulws"]
+
+[ext_resource type="Script" path="res://Scripts/script_joke_line.gd" id="1_5eobx"]
+[ext_resource type="Script" path="res://Nodes/script_joke.gd" id="1_yd3bv"]
+
+[sub_resource type="Resource" id="Resource_ofk3o"]
+script = ExtResource("1_5eobx")
+text = "למה כלבים אוהבים את השפה העברית?"
+time = 2.0
+accepted_indexes = Array[int]([])
+
+[sub_resource type="Resource" id="Resource_ddamx"]
+script = ExtResource("1_5eobx")
+text = "כי יש בה הרבה שמות עצם"
+time = 2.0
+accepted_indexes = Array[int]([2])
+
+[resource]
+script = ExtResource("1_yd3bv")
+lines = Array[ExtResource("1_5eobx")]([SubResource("Resource_ofk3o"), SubResource("Resource_ddamx")])
