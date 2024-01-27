@@ -1,20 +1,30 @@
-[gd_scene load_steps=16 format=3 uid="uid://ca6sv7rqq7oi3"]
+[gd_scene load_steps=26 format=3 uid="uid://ca6sv7rqq7oi3"]
 
 [ext_resource type="Texture2D" uid="uid://7ixsbmxqp5t1" path="res://Sprites/table.png" id="1_05ipf"]
 [ext_resource type="Texture2D" uid="uid://qlo17h104lij" path="res://Sprites/bg.png" id="2_qav1c"]
 [ext_resource type="PackedScene" uid="uid://cc6nt4n6ymqrq" path="res://Nodes/node_dad.tscn" id="3_dl2ld"]
 [ext_resource type="Texture2D" uid="uid://cbuu3j7xy8mm3" path="res://Sprites/dad middle.png" id="5_kb0q6"]
 [ext_resource type="Resource" uid="uid://d8bc33wm342e" path="res://jokes/joke_belt.tres" id="5_tvryu"]
+[ext_resource type="AudioStream" uid="uid://ck3cv048ccji0" path="res://Sounds/dad 1 joke 1.wav" id="6_5mufv"]
 [ext_resource type="Texture2D" uid="uid://2re5y50v84qj" path="res://Sprites/dad right.png" id="6_iwfof"]
-[ext_resource type="AudioStream" uid="uid://dhq6n6u82053x" path="res://Sounds/dad8.wav" id="6_q0uy7"]
 [ext_resource type="AudioStream" uid="uid://c4h58c6ah8ve5" path="res://Sounds/dad 2 joke 1.wav" id="6_q3p1m"]
 [ext_resource type="PackedScene" uid="uid://xjvq3x82cr55" path="res://Scenes/draggable_action.tscn" id="6_x64ke"]
-[ext_resource type="AudioStream" uid="uid://b6purqrckn03i" path="res://Sounds/dad3.wav" id="7_7vxkl"]
 [ext_resource type="Resource" uid="uid://ctifsar3w38fx" path="res://jokes/joke_desert.tres" id="7_887qx"]
 [ext_resource type="AudioStream" uid="uid://8x1qoouho0rw" path="res://Sounds/dad 2 win 2.wav" id="7_mqkum"]
+[ext_resource type="AudioStream" uid="uid://dc7ashiuveph0" path="res://Sounds/dad 1 joke 2.wav" id="7_qmj10"]
+[ext_resource type="AudioStream" uid="uid://dhq6n6u82053x" path="res://Sounds/dad 1 joke 3.wav" id="8_g0y32"]
+[ext_resource type="AudioStream" uid="uid://b6purqrckn03i" path="res://Sounds/dad 1 win 1.wav" id="9_461ow"]
 [ext_resource type="AudioStream" uid="uid://dodwefeg7p374" path="res://Sounds/dad 3 joke 1.wav" id="9_n64u5"]
 [ext_resource type="AudioStream" uid="uid://jey405s8ksax" path="res://Sounds/ost.wav" id="9_qib4u"]
 [ext_resource type="AudioStream" uid="uid://bj8jdu3qx4d8j" path="res://Sounds/dad 3 win 3.wav" id="10_3ymp2"]
+[ext_resource type="AudioStream" uid="uid://ckhqb1j57xj4c" path="res://Sounds/dad 1 win 2.wav" id="10_iyvuk"]
+[ext_resource type="AudioStream" uid="uid://dhn5b02a351cv" path="res://Sounds/dad 2 win 1.wav" id="10_qhktk"]
+[ext_resource type="AudioStream" uid="uid://c5gm0raggknni" path="res://Sounds/dad 1 win 3.wav" id="11_fk0sw"]
+[ext_resource type="AudioStream" uid="uid://b37fvdbdx5uqp" path="res://Sounds/sfx_die.wav" id="12_k3hgh"]
+[ext_resource type="AudioStream" uid="uid://dn7y48ram8ld1" path="res://Sounds/dad 3 joke 2.wav" id="14_a1oa0"]
+[ext_resource type="AudioStream" uid="uid://idw6iqkk4h64" path="res://Sounds/dad 3 win 1.wav" id="15_4o37q"]
+[ext_resource type="AudioStream" uid="uid://dnvt4j5v0n0oh" path="res://Sounds/dad 3 win 2.wav" id="16_jiuxr"]
+[ext_resource type="AudioStream" uid="uid://blqw1pqer7yod" path="res://Sounds/dad 2 win 3.wav" id="23_0xmk2"]
 
 [node name="MainScene" type="Node2D"]
 position = Vector2(216, -112)
@@ -50,6 +60,9 @@ component_type = 1
 z_index = 1
 position = Vector2(24, 247)
 jokes = Array[Resource("res://Nodes/script_joke.gd")]([ExtResource("5_tvryu")])
+joke_sfxs = Array[Resource]([ExtResource("6_5mufv"), ExtResource("7_qmj10"), ExtResource("8_g0y32")])
+win_sfxs = Array[Resource]([ExtResource("9_461ow"), ExtResource("10_iyvuk"), ExtResource("11_fk0sw")])
+death_sfxs = Array[Resource]([ExtResource("12_k3hgh")])
 
 [node name="TextBox" parent="dadLeft" index="0"]
 offset_left = -240.0
@@ -60,17 +73,14 @@ offset_bottom = -71.0
 [node name="timer" parent="dadLeft" index="1"]
 wait_time = 4.83719
 
-[node name="sfx_joke" parent="dadLeft" index="4"]
-stream = ExtResource("6_q0uy7")
-
-[node name="sfx_win" parent="dadLeft" index="5"]
-stream = ExtResource("7_7vxkl")
-
 [node name="dadMiddle" parent="." instance=ExtResource("3_dl2ld")]
 position = Vector2(24, 247)
 cooldown_min = 3.0
 cooldown_max = 7.0
 textbox_pos = Vector2(160, 0)
+joke_sfxs = Array[Resource]([ExtResource("9_n64u5"), ExtResource("14_a1oa0")])
+win_sfxs = Array[Resource]([ExtResource("15_4o37q"), ExtResource("16_jiuxr"), ExtResource("10_3ymp2")])
+death_sfxs = Array[Resource]([ExtResource("12_k3hgh")])
 
 [node name="TextBox" parent="dadMiddle" index="0"]
 offset_left = -80.0
@@ -78,7 +88,7 @@ offset_top = -135.0
 offset_right = 80.0
 offset_bottom = -71.0
 
-[node name="ColorRect" parent="dadMiddle/TextBox" index="4"]
+[node name="ColorRect" parent="dadMiddle/TextBox" index="5"]
 color = Color(1, 1, 1, 0.415686)
 
 [node name="timer" parent="dadMiddle" index="1"]
@@ -87,12 +97,6 @@ wait_time = 5.73538
 [node name="sprite" parent="dadMiddle" index="2"]
 texture = ExtResource("5_kb0q6")
 
-[node name="sfx_joke" parent="dadMiddle" index="4"]
-stream = ExtResource("9_n64u5")
-
-[node name="sfx_win" parent="dadMiddle" index="5"]
-stream = ExtResource("10_3ymp2")
-
 [node name="dadRight" parent="." instance=ExtResource("3_dl2ld")]
 z_index = 3
 position = Vector2(24, 247)
@@ -100,6 +104,9 @@ jokes = Array[Resource("res://Nodes/script_joke.gd")]([ExtResource("7_887qx")])
 cooldown_min = 0.0
 cooldown_max = 4.0
 textbox_pos = Vector2(320, 0)
+joke_sfxs = Array[Resource]([ExtResource("6_q3p1m"), ExtResource("10_qhktk")])
+win_sfxs = Array[Resource]([ExtResource("7_mqkum"), ExtResource("23_0xmk2")])
+death_sfxs = Array[Resource]([ExtResource("12_k3hgh")])
 
 [node name="TextBox" parent="dadRight" index="0"]
 offset_left = 80.0
@@ -112,12 +119,6 @@ wait_time = 1.69124
 
 [node name="sprite" parent="dadRight" index="2"]
 texture = ExtResource("6_iwfof")
-
-[node name="sfx_joke" parent="dadRight" index="4"]
-stream = ExtResource("6_q3p1m")
-
-[node name="sfx_win" parent="dadRight" index="5"]
-stream = ExtResource("7_mqkum")
 
 [node name="ost_source" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true

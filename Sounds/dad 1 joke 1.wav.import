@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bqvh0nc6v4yjc"
-path="res://.godot/imported/dad10.wav-f7c42ce46f85603f58d3de7908dd7eb9.sample"
+uid="uid://ck3cv048ccji0"
+path="res://.godot/imported/dad 1 joke 1.wav-37150a7d13bd7e9a4718c045766ae3af.sample"
 
 [deps]
 
-source_file="res://Sounds/dad10.wav"
-dest_files=["res://.godot/imported/dad10.wav-f7c42ce46f85603f58d3de7908dd7eb9.sample"]
+source_file="res://Sounds/dad 1 joke 1.wav"
+dest_files=["res://.godot/imported/dad 1 joke 1.wav-37150a7d13bd7e9a4718c045766ae3af.sample"]
 
 [params]
 
