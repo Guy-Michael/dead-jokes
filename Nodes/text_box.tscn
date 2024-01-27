@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c70ghln7n3qxg"]
+[gd_scene load_steps=8 format=3 uid="uid://c70ghln7n3qxg"]
 
 [ext_resource type="Script" path="res://Scripts/text_box.gd" id="1_innyj"]
 [ext_resource type="Texture2D" uid="uid://8l4a303cib0i" path="res://Sprites/speech bubble normal.png" id="2_6s6tk"]
 [ext_resource type="Texture2D" uid="uid://clhqoha3iwugw" path="res://Sprites/speech bubble green.png" id="3_m2y6b"]
 [ext_resource type="Texture2D" uid="uid://ni0gj5um6on" path="res://Sprites/speech bubble red.png" id="4_c2rkp"]
+[ext_resource type="Texture2D" uid="uid://bto0lylw5xqdb" path="res://Sprites/clap emoji.png" id="5_rohnr"]
 [ext_resource type="Texture2D" uid="uid://dp82rvjhwxw7k" path="res://Sprites/speech bubble.png" id="5_yqkgm"]
 
 [sub_resource type="FontFile" id="FontFile_nhoka"]
@@ -54,6 +55,12 @@ script = ExtResource("1_innyj")
 sprites_arr = Array[Texture]([ExtResource("2_6s6tk"), ExtResource("3_m2y6b"), ExtResource("4_c2rkp")])
 metadata/_edit_use_anchors_ = true
 
+[node name="hint" type="Sprite2D" parent="."]
+z_index = 20
+position = Vector2(16, 15)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_rohnr")
+
 [node name="ninePatch" type="NinePatchRect" parent="."]
 layout_mode = 2
 texture = ExtResource("5_yqkgm")
@@ -64,6 +71,7 @@ patch_margin_right = 16
 patch_margin_bottom = 16
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -71,6 +79,7 @@ theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="MarginContainer"]
 custom_minimum_size = Vector2(32, 32)
@@ -82,6 +91,7 @@ theme_override_font_sizes/font_size = 12
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="timer" type="Timer" parent="."]
 wait_time = 0.3

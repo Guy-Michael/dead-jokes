@@ -65,7 +65,8 @@ func return_type():
 
 ##Destroy the object when it is dropped in dropable area
 func destroy_me():
-	queue_free()
+	print("destroying is done from the dad object")
+	#queue_free()
 	
 func set_pos(new_pos: Vector2):
 	global_position = new_pos

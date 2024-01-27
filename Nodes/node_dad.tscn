@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc6nt4n6ymqrq"]
+[gd_scene load_steps=9 format=3 uid="uid://cc6nt4n6ymqrq"]
 
 [ext_resource type="Texture2D" uid="uid://fdpiogo0tk5" path="res://Sprites/dad left.png" id="1_livho"]
 [ext_resource type="Script" path="res://Nodes/script_dad.gd" id="2_l4x7i"]
 [ext_resource type="PackedScene" uid="uid://c70ghln7n3qxg" path="res://Nodes/text_box.tscn" id="2_orbi0"]
 [ext_resource type="Resource" uid="uid://bxtkk5518wdtp" path="res://jokes/joke_chicken.tres" id="4_8raph"]
+[ext_resource type="Script" path="res://Scenes/scr_drop_highlight.gd" id="4_junpk"]
 [ext_resource type="AudioStream" uid="uid://b37fvdbdx5uqp" path="res://Sounds/sfx_die.wav" id="5_263wi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jt22t"]
@@ -31,10 +32,10 @@ position = Vector2(80, 32)
 shape = SubResource("RectangleShape2D_12uel")
 
 [node name="ColorRect" type="ColorRect" parent="TextBox"]
-visible = false
 layout_mode = 2
 mouse_filter = 2
-color = Color(1, 1, 1, 0.0901961)
+color = Color(1, 1, 0.909804, 0.443137)
+script = ExtResource("4_junpk")
 
 [node name="timer" type="Timer" parent="."]
 process_callback = 0
@@ -45,16 +46,8 @@ one_shot = true
 texture = ExtResource("1_livho")
 hframes = 3
 
-[node name="sfx_dead" type="AudioStreamPlayer" parent="."]
+[node name="sfx_player" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_263wi")
-volume_db = 2.0
-
-[node name="sfx_joke" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_263wi")
-volume_db = 2.0
-
-[node name="sfx_win" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_263wi")
-volume_db = 2.0
+volume_db = 5.0
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

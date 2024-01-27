@@ -7,21 +7,31 @@ enum DAD_STATES{
 	joke,
 	dead
 }
-
+enum SFX{
+	joke,
+	win,
+	death,
+}
 @export var jokes : Array[class_joke]
 @export var cooldown_min = 2.0
 @export var cooldown_max = 5.0
 @export var textbox_pos: Vector2 = Vector2(1,1)
+@export var my_clap_drag: Node
+
+@export_group("sounds")
+@export var joke_sfxs: Array[Resource]
+@export var win_sfxs: Array[Resource]
+@export var death_sfxs: Array[Resource]
 
 var current_joke = -1
 @onready var my_timer = $timer
 @onready var my_textbox = $TextBox
 @onready var my_sprite = $sprite
-@onready var death_sfx_source = $sfx_dead
-@onready var win_sfx_source = $sfx_win
-@onready var joke_sfx_source = $sfx_joke
+@onready var sfx_player = $sfx_player
 @onready var rnd = RandomNumberGenerator.new()
 @onready var state = DAD_STATES.off
+
+
 
 func _ready():
 	my_timer.start(rnd.randf_range(cooldown_min,cooldown_max))
@@ -49,6 +59,8 @@ func _on_timer_timeout():
 				#progress lines
 				var _line = current_joke.next_line()
 				my_textbox.display_text(_line.text)
+				if(_line.get_activator() and globals.hint_active):
+					my_textbox.display_hint()
 				my_timer.start(_line.time)
 				
 		DAD_STATES.dead:
@@ -66,10 +78,13 @@ func switch_state(new_state : DAD_STATES):
 			my_timer.start(num)
 			my_sprite.set_frame(0)
 			current_joke = -1
+			
+			#disable hint
+			globals.hint_active = false
 		
 		DAD_STATES.joke:
 			#start a joke
-			joke_sfx_source.play()
+			play_sfx(SFX.joke)
 	
 			#pick a joke
 			current_joke = jokes.pick_random()
@@ -87,7 +102,7 @@ func switch_state(new_state : DAD_STATES):
 			
 		DAD_STATES.dead:
 			print("died")
-			death_sfx_source.play()
+			play_sfx(SFX.death)
 			my_textbox.display_text("")
 			
 			#change sprite
@@ -98,6 +113,8 @@ func switch_state(new_state : DAD_STATES):
 			if(globals.hp == 0):
 				%ost_source.stop()
 			
+			#destroy clap
+			my_clap_drag.queue_free()
 
 func send_action(_action: globals.ACTIONS):
 	
@@ -106,10 +123,26 @@ func send_action(_action: globals.ACTIONS):
 		var _right = current_joke.is_activated()
 		
 		if _right:
-			win_sfx_source.play()			
+			play_sfx(SFX.win)
 			my_textbox.set_texture(1)
+			globals.hint_active = false
 		else:
+			#if globals.hint_active:
+				#my_textbox.set_texture(2)
+			#else:
 			switch_state(DAD_STATES.dead)
-			
+			3
 		return _right
-	return false
+	return true
+	
+func play_sfx(index: SFX):
+	var arr = []
+	match index:
+		SFX.death:
+			arr = death_sfxs
+		SFX.joke:
+			arr = joke_sfxs
+		SFX.win:
+			arr = win_sfxs
+	sfx_player.stream = arr.pick_random()
+	sfx_player.play()

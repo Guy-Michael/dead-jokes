@@ -3,6 +3,7 @@ extends MarginContainer
 @onready var label = $MarginContainer/Label
 @onready var timer = $timer
 @onready var ninePatch = $ninePatch
+@onready var hint_sprite = $hint
 
 const MAX_WIDTH = 256
 
@@ -23,6 +24,8 @@ func set_texture(index: int):
 	ninePatch.texture = sprites_arr[index]
 
 func display_text(text_to_display: String):
+	
+	hint_sprite.visible = false
 	
 	set_texture(0)
 	text = text_to_display
@@ -67,3 +70,6 @@ func _display_letter():
 	
 func _on_timer_timeout():
 	_display_letter()
+
+func display_hint():
+	hint_sprite.visible = true
