@@ -1,4 +1,4 @@
-@tool
+#@tool
 extends Node2D
 class_name class_dad
 
@@ -22,16 +22,16 @@ var current_joke = -1
 
 func _ready():
 	my_timer.start(rnd.randf_range(cooldown_min,cooldown_max))
-
-func _process(_delta):
-	
-	if not Engine.is_editor_hint():
-		if Input.is_action_pressed("clap"):
-			send_action(globals.ACTIONS.CLAP)
-		if Input.is_action_pressed("laugh"):
-			send_action(globals.ACTIONS.LAUGH)
-	else:
-		my_textbox.global_position = Vector2(textbox_pos)
+#
+#func _process(_delta):
+	#
+	#if not Engine.is_editor_hint():
+		#if Input.is_action_pressed("clap"):
+			#send_action(globals.ACTIONS.CLAP)
+		#if Input.is_action_pressed("laugh"):
+			#send_action(globals.ACTIONS.LAUGH)
+	#else:
+		#my_textbox.global_position = Vector2(textbox_pos)
 
 
 		
@@ -88,10 +88,11 @@ func switch_state(new_state : DAD_STATES):
 			var _line = current_joke.get_line()
 			print(_line.text)
 			my_textbox.display_text(_line.text)
+			#my_textbox.global_position = textbox_pos #done before already but buggy for some reason
 			
 			#logic
 			state = DAD_STATES.joke
-			print("timer: " + str(_line.time))
+			#print("timer: " + str(_line.time))
 			my_timer.start(_line.time)
 			my_sprite.set_frame(1)
 			
