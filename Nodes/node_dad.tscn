@@ -12,13 +12,12 @@ size = Vector2(32, 56)
 position = Vector2(248, 120)
 script = ExtResource("2_l4x7i")
 jokes = Array[Resource("res://Nodes/script_joke.gd")]([ExtResource("4_8raph")])
-texture = ExtResource("1_livho")
 
 [node name="TextBox" parent="." instance=ExtResource("2_orbi0")]
-offset_left = -176.0
-offset_top = -96.0
-offset_right = -143.0
-offset_bottom = -40.0
+offset_left = -200.0
+offset_top = -120.0
+offset_right = -167.0
+offset_bottom = -64.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextBox"]
 position = Vector2(16, 28)

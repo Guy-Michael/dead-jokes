@@ -13,21 +13,50 @@ position = Vector2(216, -112)
 z_index = -5
 position = Vector2(24, 247)
 texture = ExtResource("1_05ipf")
+metadata/_edit_lock_ = true
 
 [node name="bg" type="Sprite2D" parent="."]
 z_index = -10
 position = Vector2(24, 247)
 texture = ExtResource("2_qav1c")
-
-[node name="dad_left" parent="." instance=ExtResource("3_dl2ld")]
-position = Vector2(24, 247)
+metadata/_edit_lock_ = true
 
 [node name="dad_middle" parent="." instance=ExtResource("3_dl2ld")]
 z_index = -2
 position = Vector2(24, 247)
+textbox_pos = Vector2(160, 0)
+
+[node name="TextBox" parent="dad_middle" index="0"]
+offset_left = -80.0
+offset_top = -135.0
+offset_right = -47.0
+offset_bottom = -79.0
+
+[node name="timer" parent="dad_middle" index="1"]
+wait_time = 7.2549
+
+[node name="sprite" parent="dad_middle" index="2"]
 texture = ExtResource("4_n34ln")
 
 [node name="dad_right" parent="." instance=ExtResource("3_dl2ld")]
 z_index = -1
 position = Vector2(24, 247)
+textbox_pos = Vector2(320, 0)
+
+[node name="TextBox" parent="dad_right" index="0"]
+offset_left = 80.0
+offset_top = -135.0
+offset_right = 113.0
+offset_bottom = -80.0
+
+[node name="timer" parent="dad_right" index="1"]
+wait_time = 5.09173
+
+[node name="sprite" parent="dad_right" index="2"]
 texture = ExtResource("5_wyagn")
+
+[node name="NodeDad" parent="." instance=ExtResource("3_dl2ld")]
+position = Vector2(24, 247)
+
+[editable path="dad_middle"]
+[editable path="dad_right"]

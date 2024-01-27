@@ -13,7 +13,7 @@ accepted_indexes = Array[int]([])
 script = ExtResource("1_i3ud1")
 text = "horse haha"
 time = 6.0
-accepted_indexes = Array[int]([1])
+accepted_indexes = Array[int]([1, 0])
 
 [resource]
 script = ExtResource("2_q24x6")

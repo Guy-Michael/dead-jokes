@@ -25,8 +25,6 @@ func set_texture(index: int):
 func display_text(text_to_display: String):
 	
 	set_texture(0)
-	
-	print("  - displaying: " + text_to_display)
 	text = text_to_display
 	
 	visible = text != ""

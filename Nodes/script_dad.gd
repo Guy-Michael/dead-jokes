@@ -1,3 +1,4 @@
+@tool
 extends Node2D
 class_name class_dad
 
@@ -8,7 +9,9 @@ enum DAD_STATES{
 }
 
 @export var jokes : Array[class_joke]
-@export var texture: Texture
+@export var cooldown_min = 4.0
+@export var cooldown_max = 9.0
+@export var textbox_pos: Vector2
 
 var current_joke = -1
 @onready var my_timer = $timer
@@ -18,14 +21,20 @@ var current_joke = -1
 @onready var state = DAD_STATES.off
 
 func _ready():
-	my_timer.start()
-	my_sprite.set_texture(texture)
+	my_timer.start(rnd.randf_range(cooldown_min,cooldown_max))
 
 func _process(_delta):
-	if Input.is_action_pressed("clap"):
-		send_action(globals.ACTIONS.CLAP)
-	if Input.is_action_pressed("laugh"):
-		send_action(globals.ACTIONS.LAUGH)
+	
+	if not Engine.is_editor_hint():
+		if Input.is_action_pressed("clap"):
+			send_action(globals.ACTIONS.CLAP)
+		if Input.is_action_pressed("laugh"):
+			send_action(globals.ACTIONS.LAUGH)
+	else:
+		my_textbox.global_position = Vector2(textbox_pos)
+
+
+		
 func _on_timer_timeout():
 	
 	match state:
