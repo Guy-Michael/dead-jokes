@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="class_joke" load_steps=5 format=3 uid="uid://b7u3ul0ujfyvx"]
+
+[ext_resource type="Script" path="res://Nodes/script_joke.gd" id="1_2m2wp"]
+[ext_resource type="Script" path="res://Scripts/script_joke_line.gd" id="1_8uvpt"]
+
+[sub_resource type="Resource" id="Resource_ywe8p"]
+script = ExtResource("1_8uvpt")
+text = "באיסטנבול לא סוגרים דלתות"
+time = 2.0
+accepted_indexes = Array[int]([])
+
+[sub_resource type="Resource" id="Resource_hosrv"]
+script = ExtResource("1_8uvpt")
+text = "הם טורקים"
+time = 1.0
+accepted_indexes = Array[int]([1])
+
+[resource]
+script = ExtResource("1_2m2wp")
+lines = Array[ExtResource("1_8uvpt")]([SubResource("Resource_ywe8p"), SubResource("Resource_hosrv")])

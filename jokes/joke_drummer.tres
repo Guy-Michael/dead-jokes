@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="class_joke" load_steps=6 format=3 uid="uid://c36pklr40cd2r"]
+
+[ext_resource type="Script" path="res://Scripts/script_joke_line.gd" id="1_5b8fp"]
+[ext_resource type="Script" path="res://Nodes/script_joke.gd" id="1_b0owq"]
+
+[sub_resource type="Resource" id="Resource_3aw8g"]
+script = ExtResource("1_5b8fp")
+text = "אם מתופף טובע"
+time = 2.0
+accepted_indexes = Array[int]([])
+
+[sub_resource type="Resource" id="Resource_j2cfr"]
+script = ExtResource("1_5b8fp")
+text = "מה יעזור לו?"
+time = 2.0
+accepted_indexes = Array[int]([])
+
+[sub_resource type="Resource" id="Resource_nmsbm"]
+script = ExtResource("1_5b8fp")
+text = "מצילה"
+time = 1.0
+accepted_indexes = Array[int]([2])
+
+[resource]
+script = ExtResource("1_b0owq")
+lines = Array[ExtResource("1_5b8fp")]([SubResource("Resource_3aw8g"), SubResource("Resource_j2cfr"), SubResource("Resource_nmsbm")])

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="class_joke" load_steps=5 format=3 uid="uid://buq8rymuxq6rc"]
+
+[ext_resource type="Script" path="res://Scripts/script_joke_line.gd" id="1_603bh"]
+[ext_resource type="Script" path="res://Nodes/script_joke.gd" id="1_xrmxa"]
+
+[sub_resource type="Resource" id="Resource_jksaf"]
+script = ExtResource("1_603bh")
+text = "מה חציל צועק כשהוא נופל מצוק?"
+time = 2.0
+accepted_indexes = Array[int]([])
+
+[sub_resource type="Resource" id="Resource_0yu8v"]
+script = ExtResource("1_603bh")
+text = "חצילו! חצילו!"
+time = 1.0
+accepted_indexes = Array[int]([0])
+
+[resource]
+script = ExtResource("1_xrmxa")
+lines = Array[ExtResource("1_603bh")]([SubResource("Resource_jksaf"), SubResource("Resource_0yu8v")])

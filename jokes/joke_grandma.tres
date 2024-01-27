@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="class_joke" load_steps=7 format=3 uid="uid://b1kgbwwobpgn5"]
+
+[ext_resource type="Script" path="res://Nodes/script_joke.gd" id="1_dewuj"]
+[ext_resource type="Script" path="res://Scripts/script_joke_line.gd" id="1_uow4e"]
+
+[sub_resource type="Resource" id="Resource_bnw5r"]
+script = ExtResource("1_uow4e")
+text = "כמה סבתות קבעו פגישה"
+time = 2.0
+accepted_indexes = Array[int]([])
+
+[sub_resource type="Resource" id="Resource_alk2c"]
+script = ExtResource("1_uow4e")
+text = "רחל הגיעה ב6"
+time = 2.0
+accepted_indexes = Array[int]([])
+
+[sub_resource type="Resource" id="Resource_kt7dq"]
+script = ExtResource("1_uow4e")
+text = "שרה ב5"
+time = 2.0
+accepted_indexes = Array[int]([])
+
+[sub_resource type="Resource" id="Resource_oq2ed"]
+script = ExtResource("1_uow4e")
+text = "ויפה שעה אחת קודם"
+time = 2.0
+accepted_indexes = Array[int]([1])
+
+[resource]
+script = ExtResource("1_dewuj")
+lines = Array[ExtResource("1_uow4e")]([SubResource("Resource_bnw5r"), SubResource("Resource_alk2c"), SubResource("Resource_kt7dq"), SubResource("Resource_oq2ed")])

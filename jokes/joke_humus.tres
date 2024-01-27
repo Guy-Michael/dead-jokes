@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="class_joke" load_steps=5 format=3 uid="uid://84fypv4fdlqf"]
+
+[ext_resource type="Script" path="res://Scripts/script_joke_line.gd" id="1_j0b2a"]
+[ext_resource type="Script" path="res://Nodes/script_joke.gd" id="1_ypa8l"]
+
+[sub_resource type="Resource" id="Resource_j7w5b"]
+script = ExtResource("1_j0b2a")
+text = "טעמתי עכשיו את החומוס של צבר,"
+time = 2.0
+accepted_indexes = Array[int]([])
+
+[sub_resource type="Resource" id="Resource_3eafo"]
+script = ExtResource("1_j0b2a")
+text = "הוא אחלה"
+time = 1.0
+accepted_indexes = Array[int]([2])
+
+[resource]
+script = ExtResource("1_ypa8l")
+lines = Array[ExtResource("1_j0b2a")]([SubResource("Resource_j7w5b"), SubResource("Resource_3eafo")])
