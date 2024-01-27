@@ -16,6 +16,7 @@ var current_line_index = 0
 	
 func reset_progress():
 	current_line_index = 0
+	state = JOKE_STATES.unanswered
 func get_line():
 	#print("loaded line: " + lines[current_line_index].text)
 	return lines[current_line_index]
@@ -25,16 +26,15 @@ func next_line():
 func is_done():
 	return current_line_index >= len(lines)-1
 func is_activated():
+	print("activated? " + str(state == JOKE_STATES.won))
 	return state == JOKE_STATES.won
-func is_trigger_win(action):
-	return lines[current_line_index].accepted_action_indexes.has(action)
 func send_action(action : globals.ACTIONS):
 	
 	#abort if already answered
 	if(state != JOKE_STATES.unanswered):
 		return
 	
-	if lines[current_line_index].accepted_indexes.has(action):
+	if len(lines[current_line_index].accepted_indexes)>0 or lines[current_line_index].accepted_indexes.has(action):
 		state = JOKE_STATES.won
 	else:
 		state = JOKE_STATES.lost

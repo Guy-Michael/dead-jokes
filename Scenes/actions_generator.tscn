@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://db1a3ssgf0e7v"]
+
+[ext_resource type="Script" path="res://Scenes/scr_action_generator.gd" id="1_4gfh1"]
+[ext_resource type="PackedScene" uid="uid://xjvq3x82cr55" path="res://Scenes/draggable_action.tscn" id="2_uu1x8"]
+[ext_resource type="Texture2D" uid="uid://7ixsbmxqp5t1" path="res://Sprites/table.png" id="3_2w78h"]
+
+[node name="ActionsGenerator" type="Node2D"]
+script = ExtResource("1_4gfh1")
+draggable_node = ExtResource("2_uu1x8")
+
+[node name="pos1" type="Node2D" parent="."]
+position = Vector2(384, 224)
+
+[node name="pos2" type="Node2D" parent="."]
+position = Vector2(336, 240)
+
+[node name="pos3" type="Node2D" parent="."]
+position = Vector2(224, 256)
+
+[node name="pos4" type="Node2D" parent="."]
+position = Vector2(128, 240)
+
+[node name="Table" type="Sprite2D" parent="."]
+position = Vector2(240, 136)
+texture = ExtResource("3_2w78h")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

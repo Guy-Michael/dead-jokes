@@ -9,7 +9,7 @@ const MAX_WIDTH = 256
 var text = ""
 var letter_index = 0
 
-var speed_mult = 3
+var speed_mult = 2
 var letter_time = 0.03*speed_mult
 var space_time = 0.06*speed_mult
 var punc_time = 0.2*speed_mult
