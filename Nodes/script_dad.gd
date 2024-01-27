@@ -8,6 +8,7 @@ enum DAD_STATES{
 }
 
 @export var jokes : Array[class_joke]
+@export var texture: Texture
 
 var current_joke = -1
 @onready var my_timer = $timer
@@ -18,6 +19,7 @@ var current_joke = -1
 
 func _ready():
 	my_timer.start()
+	my_sprite.set_texture(texture)
 
 func _process(_delta):
 	if Input.is_action_pressed("clap"):
