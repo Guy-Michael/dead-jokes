@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy153elteuiog"
-path="res://.godot/imported/dad left talk.png-975db7e36aec2d32bc11a7d433b7ddff.ctex"
+uid="uid://8l4a303cib0i"
+path="res://.godot/imported/speech bubble normal.png-0a435f3f06e566015c68fc816487a3eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/dad left talk.png"
-dest_files=["res://.godot/imported/dad left talk.png-975db7e36aec2d32bc11a7d433b7ddff.ctex"]
+source_file="res://Sprites/speech bubble normal.png"
+dest_files=["res://.godot/imported/speech bubble normal.png-0a435f3f06e566015c68fc816487a3eb.ctex"]
 
 [params]
 

@@ -1,19 +1,71 @@
-
-[gd_scene load_steps=3 format=3 uid="uid://ca6sv7rqq7oi3"]
-
+[gd_scene load_steps=7 format=3 uid="uid://ca6sv7rqq7oi3"]
 
 [ext_resource type="Texture2D" uid="uid://7ixsbmxqp5t1" path="res://Sprites/table.png" id="1_05ipf"]
 [ext_resource type="Texture2D" uid="uid://qlo17h104lij" path="res://Sprites/bg.png" id="2_qav1c"]
+[ext_resource type="PackedScene" uid="uid://cc6nt4n6ymqrq" path="res://Nodes/node_dad.tscn" id="3_dl2ld"]
+[ext_resource type="Texture2D" uid="uid://cbuu3j7xy8mm3" path="res://Sprites/dad middle.png" id="4_n34ln"]
+[ext_resource type="Texture2D" uid="uid://2re5y50v84qj" path="res://Sprites/dad right.png" id="5_wyagn"]
+[ext_resource type="PackedScene" uid="uid://xjvq3x82cr55" path="res://Scenes/emily_scene.tscn" id="6_x64ke"]
 
 [node name="MainScene" type="Node2D"]
 position = Vector2(216, -112)
 
 [node name="table" type="Sprite2D" parent="."]
-position = Vector2(24, 216)
-scale = Vector2(1, 1.242)
+z_index = -5
+position = Vector2(24, 247)
 texture = ExtResource("1_05ipf")
+metadata/_edit_lock_ = true
 
 [node name="bg" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(24, 248)
+position = Vector2(24, 247)
 texture = ExtResource("2_qav1c")
+metadata/_edit_lock_ = true
+
+[node name="dad_middle" parent="." instance=ExtResource("3_dl2ld")]
+z_index = -2
+position = Vector2(24, 247)
+textbox_pos = Vector2(160, 0)
+
+[node name="TextBox" parent="dad_middle" index="0"]
+offset_left = -80.0
+offset_top = -135.0
+offset_right = -16.0
+offset_bottom = -71.0
+
+[node name="timer" parent="dad_middle" index="1"]
+wait_time = 8.20891
+
+[node name="sprite" parent="dad_middle" index="2"]
+texture = ExtResource("4_n34ln")
+
+[node name="dad_right" parent="." instance=ExtResource("3_dl2ld")]
+z_index = -1
+position = Vector2(24, 247)
+textbox_pos = Vector2(320, 0)
+
+[node name="TextBox" parent="dad_right" index="0"]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 80.0
+offset_top = -135.0
+offset_right = 144.0
+offset_bottom = -71.0
+
+[node name="timer" parent="dad_right" index="1"]
+wait_time = 5.11355
+
+[node name="sprite" parent="dad_right" index="2"]
+texture = ExtResource("5_wyagn")
+
+[node name="dad_left" parent="." instance=ExtResource("3_dl2ld")]
+position = Vector2(24, 247)
+
+[node name="joke_componnent" parent="." instance=ExtResource("6_x64ke")]
+position = Vector2(-144, 344)
+scale = Vector2(0.2, 0.2)
+component_type = 1
+
+[editable path="dad_middle"]
+[editable path="dad_right"]
