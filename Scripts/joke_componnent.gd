@@ -27,13 +27,7 @@ func _process(_delta):
 			var tween = get_tree().create_tween()
 			if is_inside_dropable:
 				var success = dropped_on.send_action(component_type)
-				#var t = Tween.new()
-				#t.tween_property(self, "scale", Vector2(0,0), 0.2).set_ease(Tween.EASE_OUT)		
-				#t.finished.connect(destroy_me)
-				if(!success):
-					destroy_me()
-				else:
-					global_position = initial_pos
+				global_position = initial_pos
 			else:
 				#global_position = initial_pos
 				tween.tween_property(self, "global_position", initial_pos, 0.2).set_ease(Tween.EASE_OUT)

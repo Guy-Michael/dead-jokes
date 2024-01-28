@@ -15,14 +15,33 @@ var speed_mult = 1.2
 var letter_time = 0.03*speed_mult
 var space_time = 0.06*speed_mult
 var punc_time = 0.2*speed_mult
+
 @export var sprites_arr : Array[Texture]
+var color_index = 0
+enum TEXTBOX_COLORS{normal,green,blue}
+
 signal finished_displaying()
 
 func _ready():
 	visible = false
+func _process(delta):
+	
+	match color_index:
+		TEXTBOX_COLORS.normal:
+			if(globals.is_dragging):
+				set_texture(TEXTBOX_COLORS.blue)
+		TEXTBOX_COLORS.blue:
+			if(!globals.is_dragging):
+				set_texture(TEXTBOX_COLORS.normal)
 
-func set_texture(index: int):
-	ninePatch.texture = sprites_arr[index]
+func set_texture(index: TEXTBOX_COLORS):
+	
+	#abort trying to hover drop highlight a green
+	#if(color_index == TEXBOX_COLOSR and index == 2):
+		#return
+		
+	color_index = index
+	ninePatch.texture = sprites_arr[int(index)]
 
 func display_text(text_to_display: String):
 	

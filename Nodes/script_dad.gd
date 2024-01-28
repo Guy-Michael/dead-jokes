@@ -37,12 +37,13 @@ var current_joke = -1
 @onready var sfx_player = $sfx_player
 @onready var rnd = RandomNumberGenerator.new()
 @onready var state = DAD_STATES.off
-@onready var acc_rate = 0.85
+@onready var acc_rate = 0.7
 
 func _ready():
 	#my_timer.start(rnd.randf_range(cooldown_min,cooldown_max))
 	if(is_tutorial):
 		switch_state(DAD_STATES.tutorial)
+	globals.hp = 3;
 
 func _process(_delta):
 	if Engine.is_editor_hint():

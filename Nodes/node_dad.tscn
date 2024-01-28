@@ -21,7 +21,7 @@ tutorial_joke = ExtResource("3_xmm31")
 cooldown_min = 0.5
 cooldown_max = 7.0
 textbox_pos = Vector2(0, 0)
-time_mult = 1.5
+time_mult = 1.3
 
 [node name="TextBox" parent="." instance=ExtResource("2_orbi0")]
 z_index = 5
@@ -38,6 +38,7 @@ position = Vector2(80, 32)
 shape = SubResource("RectangleShape2D_12uel")
 
 [node name="ColorRect" type="ColorRect" parent="TextBox"]
+visible = false
 z_index = 6
 layout_mode = 2
 mouse_filter = 2

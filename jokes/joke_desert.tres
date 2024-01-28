@@ -7,19 +7,19 @@
 script = ExtResource("1_a0l4n")
 text = "מה משותף לגלידה ונייר טואלט"
 time = 2.0
-accepted_indexes = Array[int]([])
+is_activator = false
 
 [sub_resource type="Resource" id="Resource_1fm6n"]
 script = ExtResource("1_a0l4n")
 text = "קינוח"
 time = 2.0
-accepted_indexes = Array[int]([])
+is_activator = false
 
 [sub_resource type="Resource" id="Resource_legla"]
 script = ExtResource("1_a0l4n")
 text = "הבנת?"
 time = 4.0
-accepted_indexes = Array[int]([0])
+is_activator = false
 
 [resource]
 script = ExtResource("2_4jdsn")
