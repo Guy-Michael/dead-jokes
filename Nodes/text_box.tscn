@@ -6,44 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://uurcrqa1bxo1" path="res://Sprites/speech bubble blue.png" id="4_hd3ff"]
 [ext_resource type="Texture2D" uid="uid://bto0lylw5xqdb" path="res://Sprites/clap emoji.png" id="5_rohnr"]
 [ext_resource type="Texture2D" uid="uid://dp82rvjhwxw7k" path="res://Sprites/speech bubble.png" id="5_yqkgm"]
-
-[sub_resource type="FontFile" id="FontFile_nhoka"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/24/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/24/1 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/12/0 = Vector2(0, 0)
-cache/0/24/0/ascent = 0.0
-cache/0/24/0/descent = 0.0
-cache/0/24/0/underline_position = 0.0
-cache/0/24/0/underline_thickness = 0.0
-cache/0/24/0/scale = 1.0
-cache/0/24/0/glyphs/0/advance = Vector2(0, 0)
-cache/0/24/0/glyphs/0/offset = Vector2(0, 0)
-cache/0/24/0/glyphs/0/size = Vector2(0, 0)
-cache/0/24/0/glyphs/0/uv_rect = Rect2(0, 0, 0, 0)
-cache/0/24/0/glyphs/0/texture_idx = -1
-cache/0/24/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/24/0/kerning_overrides/24/0 = Vector2(0, 0)
-cache/0/24/0/kerning_overrides/24/1 = Vector2(0, 0)
-cache/0/24/0/kerning_overrides/12/0 = Vector2(0, 0)
-cache/0/24/1/glyphs/0/offset = Vector2(0, 0)
-cache/0/24/1/glyphs/0/size = Vector2(0, 0)
-cache/0/24/1/glyphs/0/uv_rect = Rect2(0, 0, 0, 0)
-cache/0/24/1/glyphs/0/texture_idx = -1
-cache/0/12/0/ascent = 0.0
-cache/0/12/0/descent = 0.0
-cache/0/12/0/underline_position = 0.0
-cache/0/12/0/underline_thickness = 0.0
-cache/0/12/0/scale = 1.0
-cache/0/12/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/12/0/kerning_overrides/24/0 = Vector2(0, 0)
-cache/0/12/0/kerning_overrides/24/1 = Vector2(0, 0)
-cache/0/12/0/kerning_overrides/12/0 = Vector2(0, 0)
+[ext_resource type="FontFile" uid="uid://bu4cai3s8umb1" path="res://Resources/arial.ttf" id="7_kh4k1"]
 
 [node name="TextBox" type="MarginContainer"]
 anchors_preset = -1
@@ -88,8 +51,8 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.278431)
-theme_override_fonts/font = SubResource("FontFile_nhoka")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("7_kh4k1")
+theme_override_font_sizes/font_size = 14
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
